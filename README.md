@@ -37,6 +37,7 @@ After you're finished please remove all the comments and instructions!
   - [<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/whatsapp/326/toolbox_1f9f0.png" width="20" height="20"/> Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Website Mockup 📱 💻 🖥️](#screenshots)
   - [<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend](#rails-backend)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
@@ -96,12 +97,23 @@ After you're finished please remove all the comments and instructions!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+## Website Mockup 📱 💻 🖥️ <a name="screenshots"></a>
+![screenshot](https://user-images.githubusercontent.com/84629565/212738013-2616dc03-803d-460d-bbe5-3774270aa8d4.png)
+![screenshot](https://user-images.githubusercontent.com/84629565/212740341-0ba4e99a-2fe1-4cbb-b89d-fda6499a30f1.png)
+![screenshot](https://user-images.githubusercontent.com/84629565/212740277-3a10a2f1-e6ca-4617-8e4f-5a807a343234.png)
+![screenshot](https://user-images.githubusercontent.com/84629565/212743700-35b809c1-8153-4acc-a049-aa0f95cc4bb7.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Backend Repo -->
 ## <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend <a name="rails-backend"></a>
 - Here is the Backend part of the project [El Dorado Backend](https://github.com/michael-duke/ElDorado-Backend)
+
+
+<!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link] :smiley: not yet available
+- [Live Demo :rocket:](https://eldorado-rentals.netlify.app/) :smiley:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,10 +215,15 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank:
+We would like to thank:
 - [Microverse](https://www.microverse.org/)
 - Code Reviewers
 
+Under the the [Creative Commons liscense](https://creativecommons.org/licenses/by-nc/4.0/)
+
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/84629565/181086933-d5bcdb09-da51-40f6-b0f8-a1f191614257.png">
+
+Original design from [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

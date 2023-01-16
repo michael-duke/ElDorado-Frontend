@@ -1,10 +1,8 @@
 import React from 'react';
 import Reservation from '../components/Reservation';
 
-function ReservationPage() {
-  return (
-    <Reservation />
-  );
-}
+const ReservationPage = () => {
+  <Reservation />;
+};
 
 export default ReservationPage;

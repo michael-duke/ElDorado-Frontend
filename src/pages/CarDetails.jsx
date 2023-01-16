@@ -21,7 +21,7 @@ const CarDetails = ({ open }) => {
   }, []);
   return (
     <>
-      <div className="overflow-auto mx-auto px-4 py-5 bg-gray-200 rounded">
+      <div className="overflow-auto mt-10 mx-auto px-4 py-5 bg-gray-200 rounded">
         <div className="md:flex">
           <div className="mr-4">
             <h1 className="text-4xl text-black font-bold self-end justify-self-start font-osans pl-2 mb-12 border-l-4 border-amber-500">{carDetails.name}</h1>
