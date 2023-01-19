@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/v1';
+const baseURL = 'https://eldorado.onrender.com/api/v1';
 
 const setAuthToken = ({ headers }) => localStorage.setItem('token', headers.get('Authorization'));
 

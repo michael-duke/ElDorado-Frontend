@@ -2,7 +2,6 @@ import {
   combineReducers,
   configureStore,
 } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
 import authReducer from './Auth/authSlice';
 import carReducer from './Home/home';
 import reservationReducer from './Reservations/reservationsSlice';
@@ -18,7 +17,6 @@ const rootReducer = combineReducers({
 const store = configureStore(
   {
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   },
 
 );
