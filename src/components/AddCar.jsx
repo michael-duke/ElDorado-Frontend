@@ -18,8 +18,9 @@ import {
 import * as Yup from 'yup';
 import { addCar, allMessages, allStatus } from '../redux/Home/home';
 import useToken from '../redux/Auth/useToken';
-import Alert from './Alert';
 import { authenticatedUser } from '../redux/Auth/authSlice';
+import Alert from './Alert';
+import { Spinner } from './Loader';
 
 const AddCar = () => {
   const defaultImg = 'https://www.fluttercampus.com/img/4by3.webp';
@@ -46,7 +47,7 @@ const AddCar = () => {
       .max(250, 'Too Long!')
       .matches(
         /^(?=.{4,50}$)(?![a-z])(?!.*[_.]{2})[a-zA-Z0-9 ]+(?<![_.])$/,
-        'Name should have at least 3 characters and should not any number!',
+        'Name should have at least 4 characters and should not contain special characters or punctuations!',
       )
       .required('Name is required!'),
     description: Yup.string()
@@ -213,10 +214,10 @@ const AddCar = () => {
                   color="amber"
                   variant="gradient"
                   fullWidth
-                  className="capitalize"
+                  className="capitalize flex justify-center items-center"
                   disabled={!isValid || !dirty}
                 >
-                  Add Car
+                  {status === 'loading' ? <Spinner /> : <span>Add Car</span>}
                 </Button>
               </CardFooter>
             </Form>

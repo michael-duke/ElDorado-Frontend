@@ -21,8 +21,9 @@ import {
 } from '../redux/Reservations/reservationsSlice';
 import useToken from '../redux/Auth/useToken';
 import { allCars, car } from '../redux/Home/home';
-import Alert from './Alert';
 import { authenticatedUser } from '../redux/Auth/authSlice';
+import Alert from './Alert';
+import { Spinner } from './Loader';
 
 const Booking = () => {
   const [pickupDate, setPickupDate] = useState(null);
@@ -145,9 +146,9 @@ const Booking = () => {
             color="amber"
             variant="gradient"
             fullWidth
-            className="capitalize"
+            className="capitalize flex justify-center items-center"
           >
-            Reserve Car
+            {status === 'loading' ? <Spinner /> : <span>Add Car</span>}
           </Button>
         </CardFooter>
       </Card>
