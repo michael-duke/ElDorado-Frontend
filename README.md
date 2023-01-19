@@ -39,6 +39,7 @@ After you're finished please remove all the comments and instructions!
     - [Key Features](#key-features)
     - [Website Mockup 📱 💻 🖥️](#screenshots)
   - [<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend](#rails-backend)
+  - [<img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board](#kanban-board)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -109,6 +110,22 @@ After you're finished please remove all the comments and instructions!
 ## <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ruby-on-rails-icon.png" width="23" height="20"/> Rails Backend <a name="rails-backend"></a>
 - Here is the Backend part of the project [El Dorado Backend](https://github.com/michael-duke/ElDorado-Backend)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Kanban Board -->
+## <img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board <a name="kanban-board"></a>
+
+- We are a **group of 4 people**, so we used 2 Kanban Board to divide the work and keep track of the progress.
+### Frontend Kanban Board
+ - [Frontend Kanban Board p-1](https://user-images.githubusercontent.com/84629565/210576403-898f178a-227b-4006-a015-d8bce5da25ea.png)
+ - [Frontend Kanban Board p-2](https://user-images.githubusercontent.com/84629565/210576590-0ec034c7-7f7c-40d7-9426-c6ed4a073cc4.png)
+
+### Backend Kanban Board
+
+  - [Backend Kanban Board p-1](https://user-images.githubusercontent.com/84629565/210576949-48aefaf9-bd4f-4cde-ae3d-2b62c2162aff.png)
+  - [Backend Kanban Board p-2](https://user-images.githubusercontent.com/84629565/210577192-d58d11e1-fa0b-4d62-aee0-380fc95aff7f.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -157,7 +174,7 @@ Run tests
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Authors (4 Micronauts) <a name="authors"></a>
 
 👤 **Aamir Khan**
 

@@ -73,6 +73,13 @@ const carsSlice = createSlice({
       message: '',
       error: null,
     }),
+    resetOwnerCarsState: (state) => ({
+      ...state,
+      ownerCars: [],
+      status: 'idle',
+      message: '',
+      error: null,
+    }),
     setMessageEmpty: (state, action) => ({
       ...state,
       message: action.payload,
@@ -176,7 +183,9 @@ const carsSlice = createSlice({
   },
 });
 
-export const { resetCarState, setMessageEmpty, setStatusIdle } = carsSlice.actions;
+export const {
+  resetCarState, resetOwnerCarsState, setMessageEmpty, setStatusIdle,
+} = carsSlice.actions;
 export const allCars = (state) => state.cars.cars;
 export const allStatus = (state) => state.cars.status;
 export const allMessages = (state) => state.cars.message;
