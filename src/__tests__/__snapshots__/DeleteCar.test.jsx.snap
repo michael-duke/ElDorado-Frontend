@@ -15,112 +15,14 @@ Object {
         </h3>
       </div>
       <div
-        class="flex items-center justify-center h-96 w-[75vw]"
+        class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md max-w-sm mt-48 mx-auto h-32"
       >
         <div
-          class="flex items-center justify-center mx-auto h-96 my-auto"
+          class="p-6 text-center font-bold my-auto text-2xl"
         >
-          <div
-            aria-busy="true"
-            aria-label="rings-loading"
-            class=""
-            data-testid="rings-loading"
-            role="status"
-            style="display: flex;"
-          >
-            <svg
-              data-testid="rings-svg"
-              height="80"
-              stroke="#ffa200"
-              viewBox="0 0 45 45"
-              width="80"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                fill="none"
-                fill-rule="evenodd"
-                stroke-width="2"
-                transform="translate(1 1)"
-              >
-                <circle
-                  cx="22"
-                  cy="22"
-                  r="6"
-                  stroke-opacity="0"
-                >
-                  <animate
-                    attributeName="r"
-                    begin="1.5s"
-                    calcMode="linear"
-                    dur="3s"
-                    repeatCount="indefinite"
-                    values="6;22"
-                  />
-                  <animate
-                    attributeName="stroke-opacity"
-                    begin="1.5s"
-                    calcMode="linear"
-                    dur="3s"
-                    repeatCount="indefinite"
-                    values="1;0"
-                  />
-                  <animate
-                    attributeName="stroke-width"
-                    begin="1.5s"
-                    calcMode="linear"
-                    dur="3s"
-                    repeatCount="indefinite"
-                    values="2;0"
-                  />
-                </circle>
-                <circle
-                  cx="22"
-                  cy="22"
-                  r="6"
-                  stroke-opacity="0"
-                >
-                  <animate
-                    attributeName="r"
-                    begin="3s"
-                    calcMode="linear"
-                    dur="3s"
-                    repeatCount="indefinite"
-                    values="6;22"
-                  />
-                  <animate
-                    attributeName="strokeOpacity"
-                    begin="3s"
-                    calcMode="linear"
-                    dur="3s"
-                    repeatCount="indefinite"
-                    values="1;0"
-                  />
-                  <animate
-                    attributeName="strokeWidth"
-                    begin="3s"
-                    calcMode="linear"
-                    dur="3s"
-                    repeatCount="indefinite"
-                    values="2;0"
-                  />
-                </circle>
-                <circle
-                  cx="22"
-                  cy="22"
-                  r="8"
-                >
-                  <animate
-                    attributeName="r"
-                    begin="0s"
-                    calcMode="linear"
-                    dur="1.5s"
-                    repeatCount="indefinite"
-                    values="6;1;2;3;4;5;6"
-                  />
-                </circle>
-              </g>
-            </svg>
-          </div>
+           
+          No Cars Owned
+           
         </div>
       </div>
       ,
@@ -137,112 +39,14 @@ Object {
       </h3>
     </div>
     <div
-      class="flex items-center justify-center h-96 w-[75vw]"
+      class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md max-w-sm mt-48 mx-auto h-32"
     >
       <div
-        class="flex items-center justify-center mx-auto h-96 my-auto"
+        class="p-6 text-center font-bold my-auto text-2xl"
       >
-        <div
-          aria-busy="true"
-          aria-label="rings-loading"
-          class=""
-          data-testid="rings-loading"
-          role="status"
-          style="display: flex;"
-        >
-          <svg
-            data-testid="rings-svg"
-            height="80"
-            stroke="#ffa200"
-            viewBox="0 0 45 45"
-            width="80"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              stroke-width="2"
-              transform="translate(1 1)"
-            >
-              <circle
-                cx="22"
-                cy="22"
-                r="6"
-                stroke-opacity="0"
-              >
-                <animate
-                  attributeName="r"
-                  begin="1.5s"
-                  calcMode="linear"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  values="6;22"
-                />
-                <animate
-                  attributeName="stroke-opacity"
-                  begin="1.5s"
-                  calcMode="linear"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  values="1;0"
-                />
-                <animate
-                  attributeName="stroke-width"
-                  begin="1.5s"
-                  calcMode="linear"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  values="2;0"
-                />
-              </circle>
-              <circle
-                cx="22"
-                cy="22"
-                r="6"
-                stroke-opacity="0"
-              >
-                <animate
-                  attributeName="r"
-                  begin="3s"
-                  calcMode="linear"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  values="6;22"
-                />
-                <animate
-                  attributeName="strokeOpacity"
-                  begin="3s"
-                  calcMode="linear"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  values="1;0"
-                />
-                <animate
-                  attributeName="strokeWidth"
-                  begin="3s"
-                  calcMode="linear"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  values="2;0"
-                />
-              </circle>
-              <circle
-                cx="22"
-                cy="22"
-                r="8"
-              >
-                <animate
-                  attributeName="r"
-                  begin="0s"
-                  calcMode="linear"
-                  dur="1.5s"
-                  repeatCount="indefinite"
-                  values="6;1;2;3;4;5;6"
-                />
-              </circle>
-            </g>
-          </svg>
-        </div>
+         
+        No Cars Owned
+         
       </div>
     </div>
     ,

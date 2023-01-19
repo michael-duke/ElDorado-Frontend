@@ -26,7 +26,7 @@ import {
 import RandomLuxLogo from './RandomLuxLogo';
 import whiteLogo from '../assets/logo-transparent-white.png';
 import { Dots } from './Loader';
-import { resetCarState, getOwnerCars } from '../redux/Home/home';
+import { resetCarState, getOwnerCars, resetOwnerCarsState } from '../redux/Home/home';
 
 const NavBar = ({ open, handleOpen }) => {
   const [hide, setHide] = useState(false);
@@ -99,6 +99,7 @@ const NavBar = ({ open, handleOpen }) => {
   const handleSignOut = () => {
     dispatch(signOut());
     dispatch(resetReservationState());
+    dispatch(resetOwnerCarsState());
     dispatch(resetCarState());
     navigate('/');
   };

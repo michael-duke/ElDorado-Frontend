@@ -6,180 +6,216 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="overflow-auto mx-auto px-4 py-5 bg-gray-200 rounded"
+        class="flex items-center justify-center mx-auto h-96 my-auto"
       >
         <div
-          class="md:flex"
+          aria-busy="true"
+          aria-label="rings-loading"
+          class=""
+          data-testid="rings-loading"
+          role="status"
+          style="display: flex;"
         >
-          <div
-            class="mr-4"
+          <svg
+            data-testid="rings-svg"
+            height="80"
+            stroke="#ffa200"
+            viewBox="0 0 45 45"
+            width="80"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <h1
-              class="text-4xl text-black font-bold self-end justify-self-start font-osans pl-2 mb-12 border-l-4 border-amber-500"
-            />
-            <img
-              alt="Modern building architecture"
-              class="w-[1000px] min-w-[270px] rounded-lg object-cover self-stretch"
-            />
-          </div>
-          <div
-            class="flex flex-col"
-          >
-            <div
-              class="mx-auto mt-2 text-2xl text-black font-bold self-end justify-self-start font-osans bg-amber-300 px-6 py-2 max-w-fit rounded"
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              stroke-width="2"
+              transform="translate(1 1)"
             >
-              $
-              <sub
-                class="font-features subs font-normal"
+              <circle
+                cx="22"
+                cy="22"
+                r="6"
+                stroke-opacity="0"
               >
-                /per day
-              </sub>
-            </div>
-            <p
-              class="text-xs text-black font-light text-center"
-            >
-              Included Taxes and Checkup
-            </p>
-            <div
-              class="text-black bg-white border border-gray-200 p-3 my-2 drop-shadow"
-            >
-              <h2
-                class="text-xl border-l-2 border-amber-500 font-bold p-1 mb-4 bg-amber-50"
+                <animate
+                  attributeName="r"
+                  begin="1.5s"
+                  calcMode="linear"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  values="6;22"
+                />
+                <animate
+                  attributeName="stroke-opacity"
+                  begin="1.5s"
+                  calcMode="linear"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  values="1;0"
+                />
+                <animate
+                  attributeName="stroke-width"
+                  begin="1.5s"
+                  calcMode="linear"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  values="2;0"
+                />
+              </circle>
+              <circle
+                cx="22"
+                cy="22"
+                r="6"
+                stroke-opacity="0"
               >
-                SPECIFICATIONS
-              </h2>
-              <p
-                class=""
+                <animate
+                  attributeName="r"
+                  begin="3s"
+                  calcMode="linear"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  values="6;22"
+                />
+                <animate
+                  attributeName="strokeOpacity"
+                  begin="3s"
+                  calcMode="linear"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  values="1;0"
+                />
+                <animate
+                  attributeName="strokeWidth"
+                  begin="3s"
+                  calcMode="linear"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  values="2;0"
+                />
+              </circle>
+              <circle
+                cx="22"
+                cy="22"
+                r="8"
               >
-                <span
-                  class="font-semibold "
-                >
-                  Make:
-                </span>
-                 
-              </p>
-              <p
-                class="text-gray "
-              >
-                <span
-                  class="font-semibold "
-                >
-                  Model:
-                </span>
-                 
-              </p>
-              <p
-                class="text-gray text-base max-w-[420px] true"
-              >
-                <span
-                  class="font-semibold"
-                >
-                  Description:
-                </span>
-                 
-              </p>
-            </div>
-            <button
-              class="my-3 mx-auto self-center"
-              type="button"
-            >
-              <span
-                class="text-black font-bold bg-amber-500 border px-4  hover:bg-amber-600 py-3 rounded-sm my-2"
-              >
-                Reserve
-              </span>
-            </button>
-          </div>
+                <animate
+                  attributeName="r"
+                  begin="0s"
+                  calcMode="linear"
+                  dur="1.5s"
+                  repeatCount="indefinite"
+                  values="6;1;2;3;4;5;6"
+                />
+              </circle>
+            </g>
+          </svg>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="overflow-auto mx-auto px-4 py-5 bg-gray-200 rounded"
+      class="flex items-center justify-center mx-auto h-96 my-auto"
     >
       <div
-        class="md:flex"
+        aria-busy="true"
+        aria-label="rings-loading"
+        class=""
+        data-testid="rings-loading"
+        role="status"
+        style="display: flex;"
       >
-        <div
-          class="mr-4"
+        <svg
+          data-testid="rings-svg"
+          height="80"
+          stroke="#ffa200"
+          viewBox="0 0 45 45"
+          width="80"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <h1
-            class="text-4xl text-black font-bold self-end justify-self-start font-osans pl-2 mb-12 border-l-4 border-amber-500"
-          />
-          <img
-            alt="Modern building architecture"
-            class="w-[1000px] min-w-[270px] rounded-lg object-cover self-stretch"
-          />
-        </div>
-        <div
-          class="flex flex-col"
-        >
-          <div
-            class="mx-auto mt-2 text-2xl text-black font-bold self-end justify-self-start font-osans bg-amber-300 px-6 py-2 max-w-fit rounded"
+          <g
+            fill="none"
+            fill-rule="evenodd"
+            stroke-width="2"
+            transform="translate(1 1)"
           >
-            $
-            <sub
-              class="font-features subs font-normal"
+            <circle
+              cx="22"
+              cy="22"
+              r="6"
+              stroke-opacity="0"
             >
-              /per day
-            </sub>
-          </div>
-          <p
-            class="text-xs text-black font-light text-center"
-          >
-            Included Taxes and Checkup
-          </p>
-          <div
-            class="text-black bg-white border border-gray-200 p-3 my-2 drop-shadow"
-          >
-            <h2
-              class="text-xl border-l-2 border-amber-500 font-bold p-1 mb-4 bg-amber-50"
+              <animate
+                attributeName="r"
+                begin="1.5s"
+                calcMode="linear"
+                dur="3s"
+                repeatCount="indefinite"
+                values="6;22"
+              />
+              <animate
+                attributeName="stroke-opacity"
+                begin="1.5s"
+                calcMode="linear"
+                dur="3s"
+                repeatCount="indefinite"
+                values="1;0"
+              />
+              <animate
+                attributeName="stroke-width"
+                begin="1.5s"
+                calcMode="linear"
+                dur="3s"
+                repeatCount="indefinite"
+                values="2;0"
+              />
+            </circle>
+            <circle
+              cx="22"
+              cy="22"
+              r="6"
+              stroke-opacity="0"
             >
-              SPECIFICATIONS
-            </h2>
-            <p
-              class=""
+              <animate
+                attributeName="r"
+                begin="3s"
+                calcMode="linear"
+                dur="3s"
+                repeatCount="indefinite"
+                values="6;22"
+              />
+              <animate
+                attributeName="strokeOpacity"
+                begin="3s"
+                calcMode="linear"
+                dur="3s"
+                repeatCount="indefinite"
+                values="1;0"
+              />
+              <animate
+                attributeName="strokeWidth"
+                begin="3s"
+                calcMode="linear"
+                dur="3s"
+                repeatCount="indefinite"
+                values="2;0"
+              />
+            </circle>
+            <circle
+              cx="22"
+              cy="22"
+              r="8"
             >
-              <span
-                class="font-semibold "
-              >
-                Make:
-              </span>
-               
-            </p>
-            <p
-              class="text-gray "
-            >
-              <span
-                class="font-semibold "
-              >
-                Model:
-              </span>
-               
-            </p>
-            <p
-              class="text-gray text-base max-w-[420px] true"
-            >
-              <span
-                class="font-semibold"
-              >
-                Description:
-              </span>
-               
-            </p>
-          </div>
-          <button
-            class="my-3 mx-auto self-center"
-            type="button"
-          >
-            <span
-              class="text-black font-bold bg-amber-500 border px-4  hover:bg-amber-600 py-3 rounded-sm my-2"
-            >
-              Reserve
-            </span>
-          </button>
-        </div>
+              <animate
+                attributeName="r"
+                begin="0s"
+                calcMode="linear"
+                dur="1.5s"
+                repeatCount="indefinite"
+                values="6;1;2;3;4;5;6"
+              />
+            </circle>
+          </g>
+        </svg>
       </div>
     </div>
   </div>,
