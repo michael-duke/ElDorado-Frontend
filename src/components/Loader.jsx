@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rings, ThreeDots } from 'react-loader-spinner';
+import { Rings, ThreeDots, Oval } from 'react-loader-spinner';
 
 const Loader = () => (
   <div className="flex items-center justify-center mx-auto h-96 my-auto">
@@ -26,6 +26,19 @@ export const Dots = () => (
     wrapperStyle={{}}
     wrapperClassName=""
     visible
+  />
+);
+
+export const Spinner = () => (
+  <Oval
+    height={25}
+    width={25}
+    color="#fff"
+    visible
+    ariaLabel="oval-loading"
+    secondaryColor="#d5d5d5"
+    strokeWidth={3}
+    strokeWidthSecondary={2}
   />
 );
 

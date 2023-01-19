@@ -13,6 +13,7 @@ import {
 import { signIn, allStatus, allMessages } from '../redux/Auth/authSlice';
 import useToken from '../redux/Auth/useToken';
 import Alert from './Alert';
+import { Spinner } from './Loader';
 
 const Login = () => {
   const [user, setUser] = useState({});
@@ -76,8 +77,9 @@ const Login = () => {
             onClick={handleSignIn}
             variant="gradient"
             fullWidth
+            className="flex justify-center items-center"
           >
-            Sign In
+            {status === 'loading' ? <Spinner /> : <span>Sign In</span>}
           </Button>
           <Typography variant="small" className="mt-6 flex justify-center">
             Don&apos;t have an account?

@@ -14,13 +14,10 @@ import {
   Field, Form, Formik, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
-import {
-  signUp,
-  allMessages,
-  allStatus,
-} from '../redux/Auth/authSlice';
+import { signUp, allMessages, allStatus } from '../redux/Auth/authSlice';
 import useToken from '../redux/Auth/useToken';
 import Alert from './Alert';
+import { Spinner } from './Loader';
 
 const Register = () => {
   const initialValues = {
@@ -36,7 +33,7 @@ const Register = () => {
       .max(50, 'Too Long!')
       .matches(
         /^(?=.{4,50}$)(?![a-z])(?!.*[_.]{2})[a-zA-Z ]+(?<![_.])$/,
-        'Name should have at least 4 characters and should not any number!',
+        'Name should have at least 4 characters and should not contain numbers or special characters/punctuations!',
       )
       .required('Name is required!'),
     email: Yup.string().required('Email is required!').email('Invalid Email!'),
@@ -159,11 +156,12 @@ const Register = () => {
                 <Button
                   color="amber"
                   variant="gradient"
+                  className="flex justify-center items-center"
                   fullWidth
                   type="submit"
                   disabled={!isValid || !dirty}
                 >
-                  Sign Up
+                  {status === 'loading' ? <Spinner /> : <span>Register</span>}
                 </Button>
                 <Typography
                   variant="small"
