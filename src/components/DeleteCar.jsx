@@ -81,7 +81,11 @@ const DeleteCar = () => {
               available,
             }) => (
               <Card key={carId} className="cursor-pointer my-5">
-                <CardHeader color="amber" className="relative h-56 mx-0.5">
+                <CardHeader
+                  color="amber"
+                  className="relative h-56 mx-0.5"
+                  onClick={() => navigate(`/car-details/${carId}`)}
+                >
                   <img
                     src={image}
                     alt="img-blur-shadow"
