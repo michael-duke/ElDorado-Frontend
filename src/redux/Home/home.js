@@ -8,17 +8,17 @@ const ADD_CAR = 'ADD_CAR';
 const TOGGLE_CAR_AVAILABILITY = 'TOGGLE_CAR_AVAILABILITY';
 
 const initialState = {
-  cars: [],
+  availableCars: [],
   car: {},
-  ownerCars: [],
+  allCars: [],
   status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
 
 // Thunks
-export const getCars = createAsyncThunk(SHOW_CARS, async () => {
+export const getAvailableCars = createAsyncThunk(SHOW_CARS, async () => {
   try {
-    return await api.fetchCars();
+    return await api.fetchAvailableCars();
   } catch (error) {
     return error.message;
   }
@@ -31,30 +31,27 @@ export const getCar = createAsyncThunk(SHOW_CAR, async (id) => {
   }
 });
 
-export const addCar = createAsyncThunk(ADD_CAR, async ({ ownerId, car }) => {
+export const addCar = createAsyncThunk(ADD_CAR, async (car) => {
   try {
-    return await api.addCar(ownerId, car);
+    return await api.addCar(car);
   } catch (error) {
     return error.message;
   }
 });
 
-export const getOwnerCars = createAsyncThunk(
-  GET_OWNER_CARS,
-  async (ownerId) => {
-    try {
-      return await api.fetchOwnerCars(ownerId);
-    } catch (error) {
-      return error.message;
-    }
-  },
-);
+export const getAllCars = createAsyncThunk(GET_OWNER_CARS, async () => {
+  try {
+    return await api.fetchAllCars();
+  } catch (error) {
+    return error.message;
+  }
+});
 
 export const toggleAvailability = createAsyncThunk(
   TOGGLE_CAR_AVAILABILITY,
-  async ({ ownerId, carId, car }) => {
+  async ({ carId, car }) => {
     try {
-      return await api.toggleCarAvailability(ownerId, carId, car);
+      return await api.toggleCarAvailability(carId, car);
     } catch (error) {
       return error.message;
     }
@@ -73,9 +70,9 @@ const carsSlice = createSlice({
       message: '',
       error: null,
     }),
-    resetOwnerCarsState: (state) => ({
+    resetAllCarsState: (state) => ({
       ...state,
-      ownerCars: [],
+      allCars: [],
       status: 'idle',
       message: '',
       error: null,
@@ -92,16 +89,16 @@ const carsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getCars.pending, (state) => ({
+      .addCase(getAvailableCars.pending, (state) => ({
         ...state,
         status: 'loading',
       }))
-      .addCase(getCars.fulfilled, (state, action) => ({
+      .addCase(getAvailableCars.fulfilled, (state, action) => ({
         ...state,
-        cars: action.payload,
+        availableCars: action.payload,
         status: 'succeeded',
       }))
-      .addCase(getCars.rejected, (state, action) => ({
+      .addCase(getAvailableCars.rejected, (state, action) => ({
         ...state,
         status: 'failed',
         error: action.error.message,
@@ -126,15 +123,15 @@ const carsSlice = createSlice({
       }))
       .addCase(addCar.fulfilled, (state, action) => ({
         ...state,
-        cars: [
+        availableCars: [
           ...(action.payload.data.available && action.payload.status === 201
             ? [action.payload.data]
             : []),
-          ...state.cars,
+          ...state.availableCars,
         ],
-        ownerCars: [
+        allCars: [
           ...(action.payload.status === 201 ? [action.payload.data] : []),
-          ...state.ownerCars,
+          ...state.allCars,
         ],
         message: action.payload.message,
         status: action.payload.status === 200 ? 'succeeded' : 'failed',
@@ -150,13 +147,15 @@ const carsSlice = createSlice({
       }))
       .addCase(toggleAvailability.fulfilled, (state, action) => ({
         ...state,
-        cars: [
+        availableCars: [
           ...(action.payload.data.available ? [action.payload.data] : []),
-          ...state.cars.filter(({ id }) => id !== action.payload.data.id),
+          ...state.availableCars.filter(
+            ({ id }) => id !== action.payload.data.id,
+          ),
         ],
-        ownerCars: [
+        allCars: [
           action.payload.data,
-          ...state.ownerCars.filter(({ id }) => id !== action.payload.data.id),
+          ...state.allCars.filter(({ id }) => id !== action.payload.data.id),
         ],
         message: action.payload.message,
         status: 'succeeded',
@@ -166,16 +165,16 @@ const carsSlice = createSlice({
         status: 'failed',
         error: action.error.message,
       }))
-      .addCase(getOwnerCars.pending, (state) => ({
+      .addCase(getAllCars.pending, (state) => ({
         ...state,
         status: 'loading',
       }))
-      .addCase(getOwnerCars.fulfilled, (state, action) => ({
+      .addCase(getAllCars.fulfilled, (state, action) => ({
         ...state,
-        ownerCars: action.payload,
+        allCars: action.payload,
         status: 'succeeded',
       }))
-      .addCase(getOwnerCars.rejected, (state, action) => ({
+      .addCase(getAllCars.rejected, (state, action) => ({
         ...state,
         status: 'failed',
         error: action.error.message,
@@ -184,12 +183,15 @@ const carsSlice = createSlice({
 });
 
 export const {
-  resetCarState, resetOwnerCarsState, setMessageEmpty, setStatusIdle,
+  resetCarState,
+  resetAllCarsState,
+  setMessageEmpty,
+  setStatusIdle,
 } = carsSlice.actions;
-export const allCars = (state) => state.cars.cars;
+export const availableCars = (state) => state.cars.availableCars;
 export const allStatus = (state) => state.cars.status;
 export const allMessages = (state) => state.cars.message;
 export const car = (state) => state.cars.car;
-export const ownerCars = (state) => state.cars.ownerCars;
+export const allCars = (state) => state.cars.allCars;
 
 export default carsSlice.reducer;

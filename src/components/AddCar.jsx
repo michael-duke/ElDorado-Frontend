@@ -18,7 +18,6 @@ import {
 import * as Yup from 'yup';
 import { addCar, allMessages, allStatus } from '../redux/Home/home';
 import useToken from '../redux/Auth/useToken';
-import { authenticatedUser } from '../redux/Auth/authSlice';
 import Alert from './Alert';
 import { Spinner } from './Loader';
 
@@ -30,7 +29,6 @@ const AddCar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isTokenSet = useToken();
-  const currentUser = useSelector(authenticatedUser);
 
   const initialValues = {
     name: '',
@@ -74,7 +72,7 @@ const AddCar = () => {
   document.title = 'ElDorado | AddCar';
 
   const handleAddCar = (car) => {
-    dispatch(addCar({ ownerId: currentUser.id, car }));
+    dispatch(addCar(car));
   };
 
   const checkAuthUser = () => {

@@ -9,7 +9,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  ownerCars,
+  allCars,
   allStatus,
   toggleAvailability,
   setMessageEmpty,
@@ -17,12 +17,10 @@ import {
 import useToken from '../redux/Auth/useToken';
 import Loader from './Loader';
 import Switch from './Switch';
-import { authenticatedUser } from '../redux/Auth/authSlice';
 
 const DeleteCar = () => {
-  const userCars = useSelector(ownerCars);
+  const cars = useSelector(allCars);
   const status = useSelector(allStatus);
-  const currentUser = useSelector(authenticatedUser);
   const isTokenSet = useToken();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -33,7 +31,7 @@ const DeleteCar = () => {
     };
 
     setTimeout(() => {
-      dispatch(toggleAvailability({ ownerId: currentUser.id, carId, car }));
+      dispatch(toggleAvailability({ carId, car }));
     }, 1000);
   };
 
@@ -63,7 +61,7 @@ const DeleteCar = () => {
           Delete a Car
         </Typography>
       </CardHeader>
-      {userCars.length === 0 ? (
+      {cars.length === 0 ? (
         <Card className="max-w-sm mt-48 mx-auto h-32">
           <CardBody className="text-center font-bold my-auto text-2xl">
             {' '}
@@ -73,7 +71,7 @@ const DeleteCar = () => {
         </Card>
       ) : (
         <div className="Car-Grid grid gap-6">
-          {userCars.map(
+          {cars.map(
             ({
               id: carId,
               name,

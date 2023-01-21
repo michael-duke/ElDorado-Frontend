@@ -61,7 +61,7 @@ After you're finished please remove all the comments and instructions!
 # 📖 EL Dorado Frontend <a name="about-project"></a>
 ![eldorado-logo](https://user-images.githubusercontent.com/84629565/211213098-32fd3adf-05d7-44a1-93e0-8a4f6e220993.png)
 
-**El Dorado Frontend** is a luxary car rental application where the user can register new accounts, login and reserve a set of different cars. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
+**El Dorado Frontend** is a luxury car rental application where the user can register new accounts, login and reserve a set of different cars. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
 
 ## 🛠 Built With <a name="built-with"></a>
 
