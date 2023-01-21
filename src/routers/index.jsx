@@ -10,8 +10,9 @@ import BookingPage from '../pages/BookingPage';
 import ReservationPage from '../pages/ReservationPage';
 import AddCarPage from '../pages/AddCarPage';
 import DeleteCarPage from '../pages/DeleteCarPage';
-import { getCars } from '../redux/Home/home';
+import { getAvailableCars } from '../redux/Home/home';
 import ProtectedRoute from '../components/ProtectedRoute';
+import AdminRoute from '../components/AdminRoute';
 
 const AppRouter = () => {
   const [open, setOpen] = useState(true);
@@ -24,7 +25,7 @@ const AppRouter = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCars());
+    dispatch(getAvailableCars());
   }, []);
 
   return (
@@ -37,6 +38,8 @@ const AppRouter = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/reservation" element={<ReservationPage />} />
+          </Route>
+          <Route element={<AdminRoute />}>
             <Route path="/add_car" element={<AddCarPage />} />
             <Route path="/delete_car" element={<DeleteCarPage />} />
           </Route>

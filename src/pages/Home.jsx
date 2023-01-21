@@ -15,12 +15,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
-import { allCars, allStatus } from '../redux/Home/home';
+import { availableCars, allStatus } from '../redux/Home/home';
 
 const Home = () => {
   document.title = 'ElDorado | Home';
   const [width, setWidth] = useState(window.innerWidth);
-  const cars = useSelector(allCars);
+  const cars = useSelector(availableCars);
   const status = useSelector(allStatus);
   const navigate = useNavigate();
   const ref = useRef();
