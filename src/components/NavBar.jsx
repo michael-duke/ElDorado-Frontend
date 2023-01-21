@@ -28,9 +28,9 @@ import whiteLogo from '../assets/logo-transparent-white.png';
 import { Dots } from './Loader';
 import {
   resetCarState,
-  getOwnerCars,
-  resetOwnerCarsState,
-  getCars,
+  resetAllCarsState,
+  getAvailableCars,
+  getAllCars,
 } from '../redux/Home/home';
 
 const NavBar = ({ open, handleOpen }) => {
@@ -95,17 +95,17 @@ const NavBar = ({ open, handleOpen }) => {
   const handleAuth = () => {
     if (isTokenSet) {
       setAuthenticated(true);
-      dispatch(getCars());
+      dispatch(getAvailableCars());
       dispatch(getAuthenticatedUser());
       dispatch(getReservations(id));
-      dispatch(getOwnerCars(id));
+      if (role === 1) dispatch(getAllCars());
     } else setAuthenticated(false);
   };
 
   const handleSignOut = () => {
     dispatch(signOut());
     dispatch(resetReservationState());
-    dispatch(resetOwnerCarsState());
+    dispatch(resetAllCarsState());
     dispatch(resetCarState());
     navigate('/');
   };
@@ -122,10 +122,10 @@ const NavBar = ({ open, handleOpen }) => {
   }, [isTokenSet]);
 
   useEffect(() => {
-    if (pathname !== '/booking') {
+    if (isTokenSet && pathname !== '/booking') {
       dispatch(resetCarState());
     }
-  }, [pathname]);
+  }, [pathname, isTokenSet]);
   return (
     <div
       className={`${
