@@ -27,14 +27,17 @@ import RandomLuxLogo from './RandomLuxLogo';
 import whiteLogo from '../assets/logo-transparent-white.png';
 import { Dots } from './Loader';
 import {
-  resetCarState, getOwnerCars, resetOwnerCarsState, getCars,
+  resetCarState,
+  resetAllCarsState,
+  getAvailableCars,
+  getAllCars,
 } from '../redux/Home/home';
 
 const NavBar = ({ open, handleOpen }) => {
   const [hide, setHide] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [authenticated, setAuthenticated] = useState(false);
-  const { id, name: userName } = useSelector(authenticatedUser);
+  const { id, name: userName, role } = useSelector(authenticatedUser);
   const dispatch = useDispatch();
   const status = useSelector(allStatus);
   const navigate = useNavigate();
@@ -92,17 +95,17 @@ const NavBar = ({ open, handleOpen }) => {
   const handleAuth = () => {
     if (isTokenSet) {
       setAuthenticated(true);
-      dispatch(getCars());
+      dispatch(getAvailableCars());
       dispatch(getAuthenticatedUser());
       dispatch(getReservations(id));
-      dispatch(getOwnerCars(id));
+      if (role === 1) dispatch(getAllCars());
     } else setAuthenticated(false);
   };
 
   const handleSignOut = () => {
     dispatch(signOut());
     dispatch(resetReservationState());
-    dispatch(resetOwnerCarsState());
+    dispatch(resetAllCarsState());
     dispatch(resetCarState());
     navigate('/');
   };
@@ -119,10 +122,10 @@ const NavBar = ({ open, handleOpen }) => {
   }, [isTokenSet]);
 
   useEffect(() => {
-    if (pathname !== '/booking') {
+    if (isTokenSet && pathname !== '/booking') {
       dispatch(resetCarState());
     }
-  }, [pathname]);
+  }, [pathname, isTokenSet]);
   return (
     <div
       className={`${
@@ -173,7 +176,7 @@ const NavBar = ({ open, handleOpen }) => {
         )}
         {menu.map(({
           id, name, icon, path,
-        }) => (
+        }) => (role === undefined && (id === 4 || id === 5) ? null : (
           <li className="" key={id}>
             <NavLink
               end
@@ -182,14 +185,14 @@ const NavBar = ({ open, handleOpen }) => {
                 isActive && 'bg-amber-600/90 rounded-md'
               } flex gap-x-4 text-sm text-white items-center ${
                 !open
-                  && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
+                    && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
               } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md`}
             >
               {icon}
               <span className={`${!open && 'hidden'}`}>{name}</span>
             </NavLink>
           </li>
-        ))}
+        )))}
         <li>
           {authenticated ? (
             <>

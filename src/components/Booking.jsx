@@ -20,7 +20,7 @@ import {
   allStatus,
 } from '../redux/Reservations/reservationsSlice';
 import useToken from '../redux/Auth/useToken';
-import { allCars, car } from '../redux/Home/home';
+import { availableCars, car } from '../redux/Home/home';
 import { authenticatedUser } from '../redux/Auth/authSlice';
 import Alert from './Alert';
 import { Spinner } from './Loader';
@@ -29,7 +29,7 @@ const Booking = () => {
   const [pickupDate, setPickupDate] = useState(null);
   const [returnDate, setReturnDate] = useState(null);
   const currentUser = useSelector(authenticatedUser);
-  const cars = useSelector(allCars);
+  const cars = useSelector(availableCars);
   const message = useSelector(allMessages);
   const status = useSelector(allStatus);
   const selectedCar = useSelector(car).id;

@@ -148,7 +148,7 @@ const api = {
     }
     return null;
   },
-  fetchCars: async () => {
+  fetchAvailableCars: async () => {
     const response = await fetch(`${baseURL}/cars`);
     const cars = await response.json();
     return cars;
@@ -183,15 +183,15 @@ const api = {
     const data = await response.json();
     return data;
   },
-  fetchOwnerCars: async (ownerId) => {
-    const response = await fetch(`${baseURL}/owners/${ownerId}/cars`, {
+  fetchAllCars: async () => {
+    const response = await fetch(`${baseURL}/all_cars`, {
       headers: { Authorization: localStorage.getItem('token') },
     });
     const cars = await response.json();
     return cars;
   },
-  addCar: async (ownerId, car) => {
-    const response = await fetch(`${baseURL}/users/${ownerId}/cars`, {
+  addCar: async (car) => {
+    const response = await fetch(`${baseURL}/cars`, {
       ...addCarOptions({ car }),
     });
     const data = await response.json();
@@ -206,9 +206,9 @@ const api = {
 
     return data;
   },
-  toggleCarAvailability: async (ownerId, carId, car) => {
+  toggleCarAvailability: async (carId, car) => {
     const response = await fetch(
-      `${baseURL}/users/${ownerId}/cars/${carId}/availability`,
+      `${baseURL}/cars/${carId}/availability`,
       {
         ...toggleCarAvailabilityOptions({ car }),
       },
