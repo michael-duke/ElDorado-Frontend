@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import {
@@ -43,6 +43,7 @@ const NavBar = ({ open, handleOpen }) => {
   const status = useSelector(allStatus);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const sideBarRef = useRef(null);
 
   const isTokenSet = useToken();
   const menu = [
@@ -93,6 +94,10 @@ const NavBar = ({ open, handleOpen }) => {
     }
   };
 
+  const handleClickOutside = (e) => {
+    if (width < 768 && !sideBarRef.current.contains(e.target)) setHide(true);
+  };
+
   const handleAuth = () => {
     if (isTokenSet) {
       setAuthenticated(true);
@@ -119,6 +124,11 @@ const NavBar = ({ open, handleOpen }) => {
   }, [width]);
 
   useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [handleClickOutside]);
+
+  useEffect(() => {
     handleAuth();
   }, [isTokenSet]);
 
@@ -127,12 +137,14 @@ const NavBar = ({ open, handleOpen }) => {
       dispatch(resetCarState());
     }
   }, [pathname, isTokenSet]);
+
   return (
     <div
+      ref={sideBarRef}
       className={`${
         open ? 'w-72' : 'w-20'
       } bg-black/90 relative self-stretch drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-50 ${
-        hide && 'h-max rounded-b-full duration-300'
+        hide && 'h-max rounded-b-full transition-all duration-300'
       } `}
     >
       <button
