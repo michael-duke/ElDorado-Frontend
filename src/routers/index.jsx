@@ -12,11 +12,12 @@ import AddCarPage from '../pages/AddCarPage';
 import DeleteCarPage from '../pages/DeleteCarPage';
 import { getAvailableCars } from '../redux/Home/home';
 import ProtectedRoute from '../components/ProtectedRoute';
-import AdminRoute from '../components/AdminRoute';
+import useToken from '../redux/Auth/useToken';
+import { getAuthenticatedUser } from '../redux/Auth/authSlice';
 
 const AppRouter = () => {
   const [open, setOpen] = useState(true);
-
+  const isTokenSet = useToken();
   const handleOpen = (flag) => {
     if (flag === true || flag === false) setOpen(flag);
     else setOpen(!open);
@@ -28,6 +29,10 @@ const AppRouter = () => {
     dispatch(getAvailableCars());
   }, []);
 
+  useEffect(() => {
+    if (isTokenSet) dispatch(getAuthenticatedUser());
+  }, [isTokenSet]);
+
   return (
     <div className="flex w-full">
       <NavBar open={open} handleOpen={handleOpen} />
@@ -38,11 +43,11 @@ const AppRouter = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/reservation" element={<ReservationPage />} />
-          </Route>
-          <Route element={<AdminRoute />}>
             <Route path="/add_car" element={<AddCarPage />} />
             <Route path="/delete_car" element={<DeleteCarPage />} />
           </Route>
+          {/* <Route element={<AdminRoute />}>
+          </Route> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>

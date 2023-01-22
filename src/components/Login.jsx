@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <>
       {status === 'unauthorized' && <Alert message={message} />}
-      <Card className="mt-5 max-w-sm mx-auto bg-white/90 backdrop-blur-md">
+      <Card className="mt-5 max-w-sm mx-auto bg-white/90 backdrop-blur-md relative top-6">
         <CardHeader
           variant="gradient"
           className="bg-amber-500 mb-4 grid h-28 place-items-center"
