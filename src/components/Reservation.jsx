@@ -60,7 +60,7 @@ const Reservation = () => {
       <div>
         <Typography
           variant="h1"
-          className="uppercase font-osans font-extralight tracking-widest mb-3 text-center text-xl sm:text-2xl md:text-3xl border-b-2 pb-2"
+          className="uppercase font-osans font-extralight tracking-widest mb-3 text-center text-[1.37rem] leading-7 sm:text-2xl md:text-3xl border-b-2 pb-2"
         >
           reservations
         </Typography>

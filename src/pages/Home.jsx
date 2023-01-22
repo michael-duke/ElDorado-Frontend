@@ -38,12 +38,12 @@ const Home = () => {
       <div>
         <Typography
           variant="h1"
-          className="uppercase font-osans font-extralight tracking-widest mb-3 text-center text-xl sm:text-2xl md:text-3xl border-b-2 pb-2"
+          className="uppercase font-osans mt-3 font-extralight tracking-widest mb-3 text-center sl:ml-2 text-[1.37rem] leading-7 sm:text-2xl md:text-3xl border-b-2 pb-2"
         >
           Latest Models
         </Typography>
       </div>
-      <div className="relative max-w-[800px] mx-auto flex flex-col">
+      <div className="relative max-w-[800px] mx-auto flex flex-col mt-6">
         <Carousel
           className="mx-auto max-w-[500px]"
           pauseOnHover
