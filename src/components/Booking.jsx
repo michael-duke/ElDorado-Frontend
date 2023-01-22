@@ -78,7 +78,7 @@ const Booking = () => {
   return (
     <>
       {status === 'failed' && <Alert message={message} />}
-      <Card className="mt-5 mb-64 max-w-sm mx-auto bg-white/90 backdrop-blur-md">
+      <Card className="mt-8 max-w-sm mx-auto bg-white/90 backdrop-blur-md">
         <CardHeader
           variant="gradient"
           className="mb-4 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
