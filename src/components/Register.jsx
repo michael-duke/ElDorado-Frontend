@@ -66,7 +66,7 @@ const Register = () => {
   return (
     <>
       {status === 'failed' && <Alert message={message} />}
-      <Card className="w-96 mt-5 mx-auto bg-white/90 backdrop-blur-md">
+      <Card className="max-w-sm mt-5 mx-auto bg-white/90 backdrop-blur-md relative top-6">
         <CardHeader
           variant="gradient"
           color="amber"
