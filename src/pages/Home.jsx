@@ -11,7 +11,7 @@ import {
   ChevronLeftIcon,
   ArrowPathIcon,
 } from '@heroicons/react/24/outline';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
@@ -19,17 +19,10 @@ import { availableCars, allStatus } from '../redux/Home/home';
 
 const Home = () => {
   document.title = 'ElDorado | Home';
-  const [width, setWidth] = useState(window.innerWidth);
   const cars = useSelector(availableCars);
   const status = useSelector(allStatus);
   const navigate = useNavigate();
   const ref = useRef();
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [width]);
 
   return status === 'loading' ? (
     <Loader />

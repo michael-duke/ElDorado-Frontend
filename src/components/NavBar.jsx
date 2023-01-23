@@ -18,7 +18,6 @@ import {
   signOut,
   allStatus,
   authenticatedUser,
-  getAuthenticatedUser,
 } from '../redux/Auth/authSlice';
 import {
   getReservations,
@@ -102,7 +101,6 @@ const NavBar = ({ open, handleOpen }) => {
     if (isTokenSet) {
       setAuthenticated(true);
       dispatch(getAvailableCars());
-      dispatch(getAuthenticatedUser());
       dispatch(getReservations(id));
       if (role === 1) dispatch(getAllCars());
     } else setAuthenticated(false);
@@ -130,7 +128,7 @@ const NavBar = ({ open, handleOpen }) => {
 
   useEffect(() => {
     handleAuth();
-  }, [isTokenSet]);
+  }, [isTokenSet, role, id]);
 
   useEffect(() => {
     if (isTokenSet && pathname !== '/booking') {
