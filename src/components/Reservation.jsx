@@ -56,7 +56,7 @@ const Reservation = () => {
   return status === 'loading' ? (
     <Loader />
   ) : (
-    <div className="max-w-sm mt-3 mx-auto flex flex-col gap-y-12 h-[95%]">
+    <div className="max-w-sm mt-3 mb-5 mx-auto flex flex-col gap-y-12 h-[95%]">
       <div>
         <Typography
           variant="h1"
