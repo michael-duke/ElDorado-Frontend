@@ -5,7 +5,7 @@ import {
   CardHeader,
   Typography,
 } from '@material-tailwind/react';
-import { Button, Carousel } from 'antd';
+import { Carousel } from 'antd';
 import {
   ChevronRightIcon,
   ChevronLeftIcon,
@@ -83,27 +83,27 @@ const Home = () => {
             </Card>
           ))}
         </Carousel>
-        <Button
+        <button
+          type="button"
           onClick={() => ref.current.prev()}
           className="group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex justify-center items-center border-none absolute top-1/2 left-5"
-          icon={
-            <ChevronLeftIcon className="stroke-gray-600 group-hover:-translate-x-0.5 duration-300 group-active:stroke-white" />
-          }
-        />
-        <Button
+        >
+          <ChevronLeftIcon className="stroke-gray-600 w-7 group-hover:-translate-x-0.5 duration-300 group-active:stroke-white" />
+        </button>
+        <button
+          type="button"
           onClick={() => ref.current.next()}
           className="group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none absolute top-1/2 right-5"
-          icon={
-            <ChevronRightIcon className="stroke-gray-600 group-hover:translate-x-0.5 duration-300 group-active:stroke-white" />
-          }
-        />
-        <Button
+        >
+          <ChevronRightIcon className="stroke-gray-600 w-7 group-hover:translate-x-0.5 duration-300 group-active:stroke-white" />
+        </button>
+        <button
+          type="button"
           onClick={() => ref.current.goTo(0)}
           className="group active:rotate-180 duration-300 rounded-full bg-amber-400 self-center drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none"
-          icon={
-            <ArrowPathIcon className="stroke-gray-600 duration-300 group-active:stroke-white" />
-          }
-        />
+        >
+          <ArrowPathIcon className="stroke-gray-600 w-7 duration-300 group-active:stroke-white" />
+        </button>
       </div>
     </>
   );
