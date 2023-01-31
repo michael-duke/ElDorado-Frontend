@@ -141,7 +141,7 @@ const NavBar = ({ open, handleOpen }) => {
       ref={sideBarRef}
       className={`${
         open ? 'w-72' : 'w-20'
-      } bg-black/90 relative self-stretch drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-50 ${
+      } bg-black/90 relative self-stretch drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-40 ${
         hide && 'h-max rounded-b-full transition-all duration-300'
       } `}
     >
