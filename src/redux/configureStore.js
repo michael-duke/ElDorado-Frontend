@@ -1,6 +1,7 @@
 import {
   combineReducers,
   configureStore,
+  getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import authReducer from './Auth/authSlice';

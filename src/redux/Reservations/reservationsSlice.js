@@ -118,7 +118,7 @@ const reservationsSlice = createSlice({
             : reservation)),
         ],
         status: 'succeeded',
-        message: action.payload.message,
+        message: `${action.payload.data.name} is ${action.payload.data.available ? 'available' : 'unavailable'}`,
       }))
       .addCase(toggleAvailability.rejected, (state, action) => ({
         ...state,
