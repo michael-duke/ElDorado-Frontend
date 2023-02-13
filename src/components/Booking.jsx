@@ -103,7 +103,7 @@ const Booking = () => {
         <CardBody className="flex flex-col gap-4 text-red-500">
           <DatePicker
             placeholder="Pickup Date"
-            placement="bottomLeft"
+            placement="topLeft"
             size="large"
             format="YYYY/MM/DD"
             allowClear
@@ -112,7 +112,7 @@ const Booking = () => {
           />
           <DatePicker
             placeholder="Return Date"
-            placement="bottomLeft"
+            placement="topLeft"
             size="large"
             format="YYYY/MM/DD"
             allowClear
