@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="w-72 bg-black/90 relative drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-50 false "
+        class="w-72 bg-black/90 relative self-stretch drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-40 false "
       >
         <button
           class="absolute flex justify-center items-center bg-amber-700 p-0 hover:border-black top-9 w-6 h-6 border rounded-full cursor-pointer -right-3 false false"
@@ -38,9 +38,7 @@ Object {
         <ul
           class="pt-6 flex flex-col justify-center false"
         >
-          <li
-            class=""
-          >
+          <li>
             <a
               aria-current="page"
               class="bg-amber-600/90 rounded-md flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
@@ -68,9 +66,7 @@ Object {
               </span>
             </a>
           </li>
-          <li
-            class=""
-          >
+          <li>
             <a
               class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
               href="/booking"
@@ -97,9 +93,7 @@ Object {
               </span>
             </a>
           </li>
-          <li
-            class=""
-          >
+          <li>
             <a
               class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
               href="/reservation"
@@ -123,64 +117,6 @@ Object {
                 class="false"
               >
                 Reservation
-              </span>
-            </a>
-          </li>
-          <li
-            class=""
-          >
-            <a
-              class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
-              href="/add_car"
-            >
-              <svg
-                aria-hidden="true"
-                class="w-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span
-                class="false"
-              >
-                Add Car
-              </span>
-            </a>
-          </li>
-          <li
-            class=""
-          >
-            <a
-              class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
-              href="/delete_car"
-            >
-              <svg
-                aria-hidden="true"
-                class="w-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span
-                class="false"
-              >
-                Delete Car
               </span>
             </a>
           </li>
@@ -215,10 +151,26 @@ Object {
       </div>
       ,
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r5:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rb:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rh:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rn:"
+    />
   </body>,
   "container": <div>
     <div
-      class="w-72 bg-black/90 relative drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-50 false "
+      class="w-72 bg-black/90 relative self-stretch drop-shadow-xl duration-300 smax:absolute smax:bottom-0 smax:top-0 smax:z-40 false "
     >
       <button
         class="absolute flex justify-center items-center bg-amber-700 p-0 hover:border-black top-9 w-6 h-6 border rounded-full cursor-pointer -right-3 false false"
@@ -250,9 +202,7 @@ Object {
       <ul
         class="pt-6 flex flex-col justify-center false"
       >
-        <li
-          class=""
-        >
+        <li>
           <a
             aria-current="page"
             class="bg-amber-600/90 rounded-md flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
@@ -280,9 +230,7 @@ Object {
             </span>
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
             href="/booking"
@@ -309,9 +257,7 @@ Object {
             </span>
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
             href="/reservation"
@@ -335,64 +281,6 @@ Object {
               class="false"
             >
               Reservation
-            </span>
-          </a>
-        </li>
-        <li
-          class=""
-        >
-          <a
-            class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
-            href="/add_car"
-          >
-            <svg
-              aria-hidden="true"
-              class="w-7"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span
-              class="false"
-            >
-              Add Car
-            </span>
-          </a>
-        </li>
-        <li
-          class=""
-        >
-          <a
-            class="false flex gap-x-4 text-sm text-white items-center false cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md"
-            href="/delete_car"
-          >
-            <svg
-              aria-hidden="true"
-              class="w-7"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span
-              class="false"
-            >
-              Delete Car
             </span>
           </a>
         </li>

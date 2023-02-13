@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-5 mb-64 max-w-[450px] mx-auto bg-white/90 backdrop-blur-md"
+        class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-8 mb-64 max-w-[450px] mx-auto bg-white/90 backdrop-blur-md"
       >
         <div
           class="relative bg-clip-border mx-4 rounded-xl overflow-hidden shadow-lg -mt-6 mb-4 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
@@ -168,11 +168,13 @@ Object {
             class="p-6 pt-0"
           >
             <button
-              class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] block w-full capitalize"
+              class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] w-full capitalize flex justify-center items-center"
               disabled=""
               type="submit"
             >
-              Add Car
+              <span>
+                Add Car
+              </span>
             </button>
           </div>
         </form>
@@ -182,7 +184,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-5 mb-64 max-w-[450px] mx-auto bg-white/90 backdrop-blur-md"
+      class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-8 mb-64 max-w-[450px] mx-auto bg-white/90 backdrop-blur-md"
     >
       <div
         class="relative bg-clip-border mx-4 rounded-xl overflow-hidden shadow-lg -mt-6 mb-4 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
@@ -344,11 +346,13 @@ Object {
           class="p-6 pt-0"
         >
           <button
-            class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] block w-full capitalize"
+            class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] w-full capitalize flex justify-center items-center"
             disabled=""
             type="submit"
           >
-            Add Car
+            <span>
+              Add Car
+            </span>
           </button>
         </div>
       </form>
