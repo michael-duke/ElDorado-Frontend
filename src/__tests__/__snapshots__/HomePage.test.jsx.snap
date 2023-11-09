@@ -7,13 +7,13 @@ Object {
     <div>
       <div>
         <h1
-          class="block antialiased text-inherit uppercase font-osans font-extralight tracking-widest mb-3 text-center text-xl sm:text-2xl md:text-3xl border-b-2 pb-2"
+          class="block antialiased text-inherit uppercase font-osans mt-3 font-extralight tracking-widest mb-3 text-center sl:ml-2 text-[1.37rem] leading-7 sm:text-2xl md:text-3xl border-b-2 pb-2"
         >
           Latest Models
         </h1>
       </div>
       <div
-        class="relative max-w-[800px] mx-auto flex flex-col"
+        class="relative max-w-[800px] mx-auto flex flex-col mt-6"
       >
         <div
           class="ant-carousel css-dev-only-do-not-override-sk7ap8"
@@ -32,12 +32,12 @@ Object {
           </div>
         </div>
         <button
-          class="ant-btn css-dev-only-do-not-override-sk7ap8 ant-btn-default ant-btn-icon-only group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex justify-center items-center border-none absolute top-1/2 left-5"
+          class="group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex justify-center items-center border-none absolute top-1/2 left-5"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="stroke-gray-600 group-hover:-translate-x-0.5 duration-300 group-active:stroke-white"
+            class="stroke-gray-600 w-7 group-hover:-translate-x-0.5 duration-300 group-active:stroke-white"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"
@@ -52,12 +52,12 @@ Object {
           </svg>
         </button>
         <button
-          class="ant-btn css-dev-only-do-not-override-sk7ap8 ant-btn-default ant-btn-icon-only group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none absolute top-1/2 right-5"
+          class="group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none absolute top-1/2 right-5"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="stroke-gray-600 group-hover:translate-x-0.5 duration-300 group-active:stroke-white"
+            class="stroke-gray-600 w-7 group-hover:translate-x-0.5 duration-300 group-active:stroke-white"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"
@@ -72,12 +72,12 @@ Object {
           </svg>
         </button>
         <button
-          class="ant-btn css-dev-only-do-not-override-sk7ap8 ant-btn-default ant-btn-icon-only group active:rotate-180 duration-300 rounded-full bg-amber-400 self-center drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none"
+          class="group active:rotate-180 duration-300 rounded-full bg-amber-400 self-center drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="stroke-gray-600 duration-300 group-active:stroke-white"
+            class="stroke-gray-600 w-7 duration-300 group-active:stroke-white"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"
@@ -98,13 +98,13 @@ Object {
   "container": <div>
     <div>
       <h1
-        class="block antialiased text-inherit uppercase font-osans font-extralight tracking-widest mb-3 text-center text-xl sm:text-2xl md:text-3xl border-b-2 pb-2"
+        class="block antialiased text-inherit uppercase font-osans mt-3 font-extralight tracking-widest mb-3 text-center sl:ml-2 text-[1.37rem] leading-7 sm:text-2xl md:text-3xl border-b-2 pb-2"
       >
         Latest Models
       </h1>
     </div>
     <div
-      class="relative max-w-[800px] mx-auto flex flex-col"
+      class="relative max-w-[800px] mx-auto flex flex-col mt-6"
     >
       <div
         class="ant-carousel css-dev-only-do-not-override-sk7ap8"
@@ -123,12 +123,12 @@ Object {
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-sk7ap8 ant-btn-default ant-btn-icon-only group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex justify-center items-center border-none absolute top-1/2 left-5"
+        class="group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex justify-center items-center border-none absolute top-1/2 left-5"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="stroke-gray-600 group-hover:-translate-x-0.5 duration-300 group-active:stroke-white"
+          class="stroke-gray-600 w-7 group-hover:-translate-x-0.5 duration-300 group-active:stroke-white"
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
@@ -143,12 +143,12 @@ Object {
         </svg>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-sk7ap8 ant-btn-default ant-btn-icon-only group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none absolute top-1/2 right-5"
+        class="group rounded-full bg-amber-400 drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none absolute top-1/2 right-5"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="stroke-gray-600 group-hover:translate-x-0.5 duration-300 group-active:stroke-white"
+          class="stroke-gray-600 w-7 group-hover:translate-x-0.5 duration-300 group-active:stroke-white"
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
@@ -163,12 +163,12 @@ Object {
         </svg>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-sk7ap8 ant-btn-default ant-btn-icon-only group active:rotate-180 duration-300 rounded-full bg-amber-400 self-center drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none"
+        class="group active:rotate-180 duration-300 rounded-full bg-amber-400 self-center drop-shadow-md shadow-amber-500 flex  justify-center items-center border-none"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="stroke-gray-600 duration-300 group-active:stroke-white"
+          class="stroke-gray-600 w-7 duration-300 group-active:stroke-white"
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"

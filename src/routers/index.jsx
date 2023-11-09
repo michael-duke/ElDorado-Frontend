@@ -46,8 +46,6 @@ const AppRouter = () => {
             <Route path="/add_car" element={<AddCarPage />} />
             <Route path="/delete_car" element={<DeleteCarPage />} />
           </Route>
-          {/* <Route element={<AdminRoute />}>
-          </Route> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>

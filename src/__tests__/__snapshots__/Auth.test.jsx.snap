@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-5 max-w-sm mx-auto bg-white/90 backdrop-blur-md"
+        class="flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-5 max-w-sm mx-auto bg-white/90 backdrop-blur-md relative top-6"
       >
         <div
           class="relative bg-clip-border mx-4 rounded-xl overflow-hidden text-gray-700 shadow-lg -mt-6 bg-amber-500 mb-4 grid h-28 place-items-center"
@@ -56,10 +56,12 @@ Object {
           class="p-6 pt-0"
         >
           <button
-            class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] block w-full"
+            class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] w-full flex justify-center items-center"
             type="button"
           >
-            Sign In
+            <span>
+              Sign In
+            </span>
           </button>
           <p
             class="antialiased font-sans text-sm font-light leading-normal text-inherit mt-6 flex justify-center"
@@ -79,7 +81,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-5 max-w-sm mx-auto bg-white/90 backdrop-blur-md"
+      class="flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md mt-5 max-w-sm mx-auto bg-white/90 backdrop-blur-md relative top-6"
     >
       <div
         class="relative bg-clip-border mx-4 rounded-xl overflow-hidden text-gray-700 shadow-lg -mt-6 bg-amber-500 mb-4 grid h-28 place-items-center"
@@ -129,10 +131,12 @@ Object {
         class="p-6 pt-0"
       >
         <button
-          class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] block w-full"
+          class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] w-full flex justify-center items-center"
           type="button"
         >
-          Sign In
+          <span>
+            Sign In
+          </span>
         </button>
         <p
           class="antialiased font-sans text-sm font-light leading-normal text-inherit mt-6 flex justify-center"
@@ -209,7 +213,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md w-96 mt-5 mx-auto bg-white/90 backdrop-blur-md"
+        class="flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md max-w-sm mt-5 mx-auto bg-white/90 backdrop-blur-md relative top-6"
       >
         <div
           class="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-amber-600 to-amber-400 text-gray-700 shadow-amber-500/40 shadow-lg -mt-6 mb-4 grid h-28 place-items-center"
@@ -297,11 +301,13 @@ Object {
             class="p-6 pt-0"
           >
             <button
-              class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] block w-full"
+              class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] w-full flex justify-center items-center"
               disabled=""
               type="submit"
             >
-              Sign Up
+              <span>
+                Register
+              </span>
             </button>
             <p
               class="antialiased font-sans text-sm font-light leading-normal text-inherit mt-6 flex justify-center"
@@ -322,7 +328,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="relative flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md w-96 mt-5 mx-auto bg-white/90 backdrop-blur-md"
+      class="flex flex-col bg-clip-border rounded-xl text-gray-700 shadow-md max-w-sm mt-5 mx-auto bg-white/90 backdrop-blur-md relative top-6"
     >
       <div
         class="relative bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-amber-600 to-amber-400 text-gray-700 shadow-amber-500/40 shadow-lg -mt-6 mb-4 grid h-28 place-items-center"
@@ -410,11 +416,13 @@ Object {
           class="p-6 pt-0"
         >
           <button
-            class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] block w-full"
+            class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-amber-600 to-amber-400 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 active:opacity-[0.85] w-full flex justify-center items-center"
             disabled=""
             type="submit"
           >
-            Sign Up
+            <span>
+              Register
+            </span>
           </button>
           <p
             class="antialiased font-sans text-sm font-light leading-normal text-inherit mt-6 flex justify-center"

@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="bg-clip-border mx-4 rounded-xl overflow-hidden shadow-lg -mt-6 sticky top-2 z-40 mb-16 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
+        class="bg-clip-border mx-4 rounded-xl overflow-hidden shadow-lg -mt-6 sticky top-2 z-30 mb-16 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
       >
         <h3
           class="block antialiased text-3xl leading-snug text-white font-osans uppercase tracking-widest font-light"
@@ -30,7 +30,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="bg-clip-border mx-4 rounded-xl overflow-hidden shadow-lg -mt-6 sticky top-2 z-40 mb-16 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
+      class="bg-clip-border mx-4 rounded-xl overflow-hidden shadow-lg -mt-6 sticky top-2 z-30 mb-16 grid h-28 place-items-center text-white bg-black/50 backdrop-blur-md"
     >
       <h3
         class="block antialiased text-3xl leading-snug text-white font-osans uppercase tracking-widest font-light"

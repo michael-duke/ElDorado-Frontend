@@ -62,8 +62,16 @@ const api = {
     const { status: code } = response;
 
     if (code === 200) setAuthToken(response);
-
+    
     const data = await response.json();
+
+    if (code === 422) {
+      return {
+        data: user,
+        status: 'failed',
+        message: data.message,
+      };
+    }
     return data;
   },
   login: async (user) => {
