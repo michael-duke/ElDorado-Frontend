@@ -5,7 +5,8 @@ import { Switch as MaterialSwitch } from '@material-tailwind/react';
 const Switch = ({
   status, carName, carId, handleRemove,
 }) => {
-  const [switchState, setSwitchState] = useState(status);
+  const initialSwitchState = status.includes('available') && true;
+  const [switchState, setSwitchState] = useState(initialSwitchState);
 
   const handleChange = () => {
     setSwitchState(!switchState);
@@ -24,7 +25,7 @@ const Switch = ({
 };
 
 Switch.propTypes = {
-  status: PropTypes.bool.isRequired,
+  status: PropTypes.string.isRequired,
   carName: PropTypes.string.isRequired,
   carId: PropTypes.number.isRequired,
   handleRemove: PropTypes.func.isRequired,

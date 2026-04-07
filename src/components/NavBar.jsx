@@ -68,13 +68,13 @@ const NavBar = ({ open, handleOpen }) => {
       id: 4,
       name: 'Add Car',
       icon: <PlusCircleIcon className="w-7" />,
-      path: '/add_car',
+      path: '/admin/add_car',
     },
     {
       id: 5,
       name: 'Delete Car',
       icon: <MinusCircleIcon className="w-7" />,
-      path: '/delete_car',
+      path: '/admin/delete_car',
     },
   ];
 
@@ -102,7 +102,7 @@ const NavBar = ({ open, handleOpen }) => {
       setAuthenticated(true);
       dispatch(getAvailableCars());
       dispatch(getReservations(id));
-      if (role === 1) dispatch(getAllCars());
+      if (role === 'admin') dispatch(getAllCars());
     } else setAuthenticated(false);
   };
 
@@ -184,11 +184,10 @@ const NavBar = ({ open, handleOpen }) => {
           >
             <li>
               <span
-                className={`bg-white/90 rounded-sm'
-              flex gap-x-4 text-sm text-black items-center ${
-                !open
-                && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
-              } cursor-pointer p-3 my-2 text-black`}
+                className={`bg-white/90 rounded-sm flex gap-x-4 text-sm text-black items-center ${
+                  !open
+                  && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
+                } cursor-pointer p-3 my-2 text-black`}
               >
                 <UserIcon className="w-7" />
                 <span className={`${!open && 'hidden'} text-black`}>
@@ -198,12 +197,10 @@ const NavBar = ({ open, handleOpen }) => {
             </li>
           </Tooltip>
         )}
-        {menu.map(({
-          id, name, icon, path,
-        }) => (role === undefined && (id === 4 || id === 5) ? null : (
+        {menu.map((menuItem) => ((menuItem.id === 4 || menuItem.id === 5) && role !== 'admin' ? null : (
           <Tooltip
-            key={id}
-            content={name}
+            key={menuItem.id}
+            content={menuItem.name}
             animate={{
               mount: { scale: 1, y: 0 },
               unmount: { scale: 0, y: 25 },
@@ -215,7 +212,7 @@ const NavBar = ({ open, handleOpen }) => {
             <li>
               <NavLink
                 end
-                to={path}
+                to={menuItem.path}
                 className={({ isActive }) => `${
                   isActive && 'bg-amber-600/90 rounded-md'
                 } flex gap-x-4 text-sm text-white items-center ${
@@ -223,8 +220,8 @@ const NavBar = ({ open, handleOpen }) => {
                       && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
                 } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md`}
               >
-                {icon}
-                <span className={`${!open && 'hidden'}`}>{name}</span>
+                {menuItem.icon}
+                <span className={`${!open && 'hidden'}`}>{menuItem.name}</span>
               </NavLink>
             </li>
           </Tooltip>

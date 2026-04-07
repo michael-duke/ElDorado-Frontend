@@ -21,7 +21,7 @@ const Alert = ({ message }) => {
   };
 
   const setCarStatusIdle = () => {
-    if (pathname === '/add_car') dispatch(setHomeStatus());
+    if (pathname === '/admin/add_car') dispatch(setHomeStatus());
   };
 
   setTimeout(() => {

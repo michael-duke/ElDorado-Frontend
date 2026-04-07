@@ -78,7 +78,7 @@ const DeleteCar = () => {
               model,
               image,
               daily_price: price,
-              available,
+              status,
             }) => (
               <Card key={carId} className="cursor-pointer my-5">
                 <CardHeader
@@ -106,7 +106,7 @@ const DeleteCar = () => {
                     {price}
                   </Typography>
                   <Switch
-                    status={available}
+                    status={status}
                     carName={name}
                     carId={carId}
                     handleRemove={handleDeleteCar}

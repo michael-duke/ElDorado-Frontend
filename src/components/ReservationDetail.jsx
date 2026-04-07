@@ -15,7 +15,7 @@ const ReservationDetail = ({
   pickupDate,
   returnDate,
   model,
-  available,
+  status,
 }) => {
   const [open, setOpen] = useState(0);
 
@@ -29,18 +29,19 @@ const ReservationDetail = ({
   };
 
   const formatDate = (date) => moment(date).format('ddd, MMM Do, YYYY');
+  console.log(status)
   return (
     <>
       <Accordion open={open === 1} animate={customAnimation}>
         <AccordionHeader onClick={() => handleOpen(1)}>{title}</AccordionHeader>
-        {!available && (
+        {/* {status === 'reserved' && (
           <Chip
             color="red"
             value="car is no longer available"
             icon={<NoSymbolIcon />}
             className="capitalize mt-2"
           />
-        )}
+        )} */}
         <AccordionBody>
           <ul className="list-outside list-disc">
             <li className="flex gap-1 items-center">
@@ -67,6 +68,6 @@ ReservationDetail.propTypes = {
   model: PropTypes.string.isRequired,
   pickupDate: PropTypes.string.isRequired,
   returnDate: PropTypes.string.isRequired,
-  available: PropTypes.bool.isRequired,
+  status: PropTypes.string.isRequired,
 };
 export default ReservationDetail;
