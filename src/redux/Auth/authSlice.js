@@ -14,38 +14,37 @@ const initialState = {
   error: null,
 };
 
-// Thunks
-export const signUp = createAsyncThunk(REGISTER, async (user) => {
+export const signUp = createAsyncThunk(REGISTER, async (user, { rejectWithValue }) => {
   try {
     return await api.register(user);
-  } catch (error) {
-    return error.message;
+  } catch (err) {
+    return rejectWithValue({ code: err.code, message: err.message });
   }
 });
 
-export const signIn = createAsyncThunk(LOGIN, async (user) => {
+export const signIn = createAsyncThunk(LOGIN, async (user, { rejectWithValue }) => {
   try {
     return await api.login(user);
-  } catch (error) {
-    return error.message;
+  } catch (err) {
+    return rejectWithValue({ code: err.code, message: err.message });
   }
 });
 
-export const signOut = createAsyncThunk(LOGOUT, async () => {
+export const signOut = createAsyncThunk(LOGOUT, async (_, { rejectWithValue }) => {
   try {
     return await api.logout();
-  } catch (error) {
-    return error.message;
+  } catch (err) {
+    return rejectWithValue({ code: err.code, message: err.message });
   }
 });
 
 export const getAuthenticatedUser = createAsyncThunk(
   GET_AUTH_USER,
-  async () => {
+  async (_, { rejectWithValue }) => {
     try {
       return await api.fetchAuthUser();
-    } catch (error) {
-      return error.message;
+    } catch (err) {
+      return rejectWithValue({ code: err.code, message: err.message });
     }
   },
 );
@@ -70,13 +69,13 @@ const authSlice = createSlice({
       .addCase(signUp.fulfilled, (state, action) => ({
         ...state,
         authenticatedUser: action.payload.data,
-        message: action.payload.message,
-        status: action.payload.status === 200 ? 'succeeded' : 'failed',
+        message: action.payload.message || 'Signed up successfully',
+        status: 'succeeded',
       }))
       .addCase(signUp.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }))
       .addCase(signIn.pending, (state) => ({
         ...state,
@@ -84,14 +83,15 @@ const authSlice = createSlice({
       }))
       .addCase(signIn.fulfilled, (state, action) => ({
         ...state,
-        authenticatedUser: action.payload.user,
-        message: action.payload.message,
-        status: action.payload.status,
+        authenticatedUser: action.payload.data,
+        message: action.payload.message || 'Logged in successfully',
+        status: 'succeeded',
       }))
       .addCase(signIn.rejected, (state, action) => ({
         ...state,
-        status: 'failed',
-        error: action.error.message,
+        status: 'unauthorized',
+        message: action.payload?.message,
+        error: action.payload?.message,
       }))
       .addCase(signOut.pending, (state) => ({
         ...state,
@@ -100,13 +100,14 @@ const authSlice = createSlice({
       .addCase(signOut.fulfilled, (state, action) => ({
         ...state,
         authenticatedUser: {},
-        message: action.payload.message,
-        status: action.payload.status,
+        message: action.payload.message || 'Logged out successfully',
+        status: 'succeeded',
       }))
       .addCase(signOut.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        message: action.payload?.message,
+        error: action.payload?.message,
       }))
       .addCase(getAuthenticatedUser.pending, (state) => ({
         ...state,
@@ -114,14 +115,14 @@ const authSlice = createSlice({
       }))
       .addCase(getAuthenticatedUser.fulfilled, (state, action) => ({
         ...state,
-        authenticatedUser: action.payload.user,
-        message: action.payload.message,
-        status: action.payload.status,
+        authenticatedUser: action.payload.data,
+        message: action.payload.message || 'User authenticated',
+        status: 'succeeded',
       }))
       .addCase(getAuthenticatedUser.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }));
   },
 });

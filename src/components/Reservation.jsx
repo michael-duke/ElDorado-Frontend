@@ -28,16 +28,14 @@ const Reservation = () => {
   const status = useSelector(allStatus);
   const isTokenSet = useToken();
 
-  const handleRemoveReservation = (reservationId) =>
-    dispatch(deleteReservation(reservationId));
+  const handleRemoveReservation = (reservationId) => dispatch(deleteReservation(reservationId));
 
   const checkAuthUser = () => {
     if (!isTokenSet) navigate('/login');
   };
 
   const handleResevationMessage = () => {
-    if (message === 'Car has been successfully booked')
-      dispatch(setMessageEmpty(''));
+    if (message.includes('successfully reserved')) dispatch(setMessageEmpty(''));
   };
 
   useEffect(() => {
@@ -61,8 +59,7 @@ const Reservation = () => {
       {reservations.length === 0 ? (
         <Card className="max-w-sm my-auto h-32">
           <CardBody className="text-center font-bold my-auto text-2xl">
-            {' '}
-            No Reservations{' '}
+            No Reservations
           </CardBody>
         </Card>
       ) : (

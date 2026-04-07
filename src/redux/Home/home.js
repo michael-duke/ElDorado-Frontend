@@ -12,48 +12,61 @@ const initialState = {
   car: {},
   allCars: [],
   status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  message: '',
   error: null,
 };
 
-// Thunks
-export const getAvailableCars = createAsyncThunk(SHOW_CARS, async () => {
-  try {
-    return await api.fetchAvailableCars();
-  } catch (error) {
-    return error.message;
-  }
-});
-export const getCar = createAsyncThunk(SHOW_CAR, async (id) => {
-  try {
-    return await api.fetchCar(id);
-  } catch (error) {
-    return error.message;
-  }
-});
+export const getAvailableCars = createAsyncThunk(
+  SHOW_CARS,
+  async (_, { rejectWithValue }) => {
+    try {
+      return await api.fetchAvailableCars();
+    } catch (err) {
+      return rejectWithValue({ code: err.code, message: err.message });
+    }
+  },
+);
 
-export const addCar = createAsyncThunk(ADD_CAR, async (car) => {
-  try {
-    return await api.addCar(car);
-  } catch (error) {
-    return error.message;
-  }
-});
+export const getCar = createAsyncThunk(
+  SHOW_CAR,
+  async (id, { rejectWithValue }) => {
+    try {
+      return await api.fetchCar(id);
+    } catch (err) {
+      return rejectWithValue({ code: err.code, message: err.message });
+    }
+  },
+);
 
-export const getAllCars = createAsyncThunk(GET_OWNER_CARS, async () => {
-  try {
-    return await api.fetchAllCars();
-  } catch (error) {
-    return error.message;
-  }
-});
+export const addCar = createAsyncThunk(
+  ADD_CAR,
+  async (car, { rejectWithValue }) => {
+    try {
+      return await api.addCar(car);
+    } catch (err) {
+      return rejectWithValue({ code: err.code, message: err.message });
+    }
+  },
+);
+
+export const getAllCars = createAsyncThunk(
+  GET_OWNER_CARS,
+  async (_, { rejectWithValue }) => {
+    try {
+      return await api.fetchAllCars();
+    } catch (err) {
+      return rejectWithValue({ code: err.code, message: err.message });
+    }
+  },
+);
 
 export const toggleAvailability = createAsyncThunk(
   TOGGLE_CAR_AVAILABILITY,
-  async ({ carId, car }) => {
+  async ({ carId, car }, { rejectWithValue }) => {
     try {
       return await api.toggleCarAvailability(carId, car);
-    } catch (error) {
-      return error.message;
+    } catch (err) {
+      return rejectWithValue({ code: err.code, message: err.message });
     }
   },
 );
@@ -95,13 +108,14 @@ const carsSlice = createSlice({
       }))
       .addCase(getAvailableCars.fulfilled, (state, action) => ({
         ...state,
-        availableCars: action.payload,
+        availableCars: action.payload.data,
+        message: action.payload.message || '',
         status: 'succeeded',
       }))
       .addCase(getAvailableCars.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }))
       .addCase(getCar.pending, (state) => ({
         ...state,
@@ -109,13 +123,14 @@ const carsSlice = createSlice({
       }))
       .addCase(getCar.fulfilled, (state, action) => ({
         ...state,
-        car: action.payload,
+        car: action.payload.data,
+        message: action.payload.message || '',
         status: 'succeeded',
       }))
       .addCase(getCar.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }))
       .addCase(addCar.pending, (state) => ({
         ...state,
@@ -124,22 +139,17 @@ const carsSlice = createSlice({
       .addCase(addCar.fulfilled, (state, action) => ({
         ...state,
         availableCars: [
-          ...(action.payload.data.available && action.payload.status === 201
-            ? [action.payload.data]
-            : []),
+          ...(action.payload.data.available ? [action.payload.data] : []),
           ...state.availableCars,
         ],
-        allCars: [
-          ...(action.payload.status === 201 ? [action.payload.data] : []),
-          ...state.allCars,
-        ],
-        message: action.payload.message,
-        status: action.payload.status === 200 ? 'succeeded' : 'failed',
+        allCars: [action.payload.data, ...state.allCars],
+        message: action.payload.message || 'Car added successfully',
+        status: 'succeeded',
       }))
       .addCase(addCar.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }))
       .addCase(toggleAvailability.pending, (state) => ({
         ...state,
@@ -163,7 +173,7 @@ const carsSlice = createSlice({
       .addCase(toggleAvailability.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }))
       .addCase(getAllCars.pending, (state) => ({
         ...state,
@@ -171,13 +181,14 @@ const carsSlice = createSlice({
       }))
       .addCase(getAllCars.fulfilled, (state, action) => ({
         ...state,
-        allCars: action.payload,
+        allCars: action.payload.data,
+        message: action.payload.message || '',
         status: 'succeeded',
       }))
       .addCase(getAllCars.rejected, (state, action) => ({
         ...state,
         status: 'failed',
-        error: action.error.message,
+        error: action.payload?.message,
       }));
   },
 });
