@@ -1,7 +1,4 @@
-import {
-  combineReducers,
-  configureStore,
-} from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import authReducer from './Auth/authSlice';
 import carReducer from './Home/home';
@@ -17,7 +14,12 @@ const rootReducer = combineReducers({
 // Redux store
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) => {
+    const middleware = getDefaultMiddleware();
+    if (!import.meta.env.PROD) middleware.concat(logger);
+
+    return middleware;
+  },
 });
 
 export default store;
