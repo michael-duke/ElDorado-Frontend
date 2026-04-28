@@ -6,7 +6,11 @@ import {
   AccordionBody,
   Chip,
 } from '@material-tailwind/react';
-import { BookmarkIcon, BookmarkSlashIcon, NoSymbolIcon } from '@heroicons/react/24/solid';
+import {
+  BookmarkIcon,
+  BookmarkSlashIcon,
+  NoSymbolIcon,
+} from '@heroicons/react/24/solid';
 import { TagIcon } from '@heroicons/react/24/outline';
 import moment from 'moment';
 
@@ -29,7 +33,7 @@ const ReservationDetail = ({
   };
 
   const formatDate = (date) => moment(date).format('ddd, MMM Do, YYYY');
-  console.log(status);
+
   return (
     <>
       <Accordion open={open === 1} animate={customAnimation}>
