@@ -14,11 +14,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { Tooltip } from '@material-tailwind/react';
 import useToken from '../redux/Auth/useToken';
-import {
-  signOut,
-  allStatus,
-  authenticatedUser,
-} from '../redux/Auth/authSlice';
+import { signOut, allStatus, authenticatedUser } from '../redux/Auth/authSlice';
 import {
   getReservations,
   resetReservationState,
@@ -68,13 +64,13 @@ const NavBar = ({ open, handleOpen }) => {
       id: 4,
       name: 'Add Car',
       icon: <PlusCircleIcon className="w-7" />,
-      path: '/add_car',
+      path: '/admin/add_car',
     },
     {
       id: 5,
       name: 'Delete Car',
       icon: <MinusCircleIcon className="w-7" />,
-      path: '/delete_car',
+      path: '/admin/delete_car',
     },
   ];
 
@@ -102,7 +98,7 @@ const NavBar = ({ open, handleOpen }) => {
       setAuthenticated(true);
       dispatch(getAvailableCars());
       dispatch(getReservations(id));
-      if (role === 1) dispatch(getAllCars());
+      if (role === 'admin') dispatch(getAllCars());
     } else setAuthenticated(false);
   };
 
@@ -184,11 +180,10 @@ const NavBar = ({ open, handleOpen }) => {
           >
             <li>
               <span
-                className={`bg-white/90 rounded-sm'
-              flex gap-x-4 text-sm text-black items-center ${
-                !open
-                && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
-              } cursor-pointer p-3 my-2 text-black`}
+                className={`bg-white/90 rounded-sm flex gap-x-4 text-sm text-black items-center ${
+                  !open &&
+                  'justify-center w-max p-1 mx-auto transition-[display] duration-100'
+                } cursor-pointer p-3 my-2 text-black`}
               >
                 <UserIcon className="w-7" />
                 <span className={`${!open && 'hidden'} text-black`}>
@@ -198,37 +193,42 @@ const NavBar = ({ open, handleOpen }) => {
             </li>
           </Tooltip>
         )}
-        {menu.map(({
-          id, name, icon, path,
-        }) => (role === undefined && (id === 4 || id === 5) ? null : (
-          <Tooltip
-            key={id}
-            content={name}
-            animate={{
-              mount: { scale: 1, y: 0 },
-              unmount: { scale: 0, y: 25 },
-            }}
-            placement="right"
-            className="bg-amber-600/90 text-black font-osans font-bold text-sm"
-            open={open ? false : undefined}
-          >
-            <li>
-              <NavLink
-                end
-                to={path}
-                className={({ isActive }) => `${
-                  isActive && 'bg-amber-600/90 rounded-md'
-                } flex gap-x-4 text-sm text-white items-center ${
-                  !open
-                      && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
-                } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md`}
-              >
-                {icon}
-                <span className={`${!open && 'hidden'}`}>{name}</span>
-              </NavLink>
-            </li>
-          </Tooltip>
-        )))}
+        {menu.map((menuItem) =>
+          (menuItem.id === 4 || menuItem.id === 5) &&
+          role !== 'admin' ? null : (
+            <Tooltip
+              key={menuItem.id}
+              content={menuItem.name}
+              animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+              }}
+              placement="right"
+              className="bg-amber-600/90 text-black font-osans font-bold text-sm"
+              open={open ? false : undefined}
+            >
+              <li>
+                <NavLink
+                  end
+                  to={menuItem.path}
+                  className={({ isActive }) =>
+                    `${
+                      isActive && 'bg-amber-600/90 rounded-md'
+                    } flex gap-x-4 text-sm text-white items-center ${
+                      !open &&
+                      'justify-center w-max p-1 mx-auto transition-[display] duration-100'
+                    } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md`
+                  }
+                >
+                  {menuItem.icon}
+                  <span className={`${!open && 'hidden'}`}>
+                    {menuItem.name}
+                  </span>
+                </NavLink>
+              </li>
+            </Tooltip>
+          ),
+        )}
         <Tooltip
           content={authenticated ? 'Logout' : 'Login'}
           animate={{
@@ -248,8 +248,8 @@ const NavBar = ({ open, handleOpen }) => {
                   className={`group bg-transparent border-none rounded-md flex ${
                     open && 'w-full'
                   } gap-x-4 text-sm text-white items-center ${
-                    !open
-                    && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
+                    !open &&
+                    'justify-center w-max p-1 mx-auto transition-[display] duration-100'
                   } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md`}
                 >
                   <ArrowRightOnRectangleIcon className="w-7 rotate-180 group-hover:-translate-x-0.5 transition duration-300" />
@@ -259,15 +259,17 @@ const NavBar = ({ open, handleOpen }) => {
             ) : (
               <NavLink
                 end
-                to="/login"
-                className={({ isActive }) => `${
-                  isActive && 'bg-amber-600/90 rounded-md '
-                } group flex gap-x-4 text-sm text-white items-center ${
-                  !open
-                    && 'justify-center w-max p-1 mx-auto transition-[display] duration-100'
-                } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md ${
-                  hide && 'hidden duration-150'
-                }`}
+                to="/auth/login"
+                className={({ isActive }) =>
+                  `${
+                    isActive && 'bg-amber-600/90 rounded-md '
+                  } group flex gap-x-4 text-sm text-white items-center ${
+                    !open &&
+                    'justify-center w-max p-1 mx-auto transition-[display] duration-100'
+                  } cursor-pointer p-3 my-2 hover:bg-amber-600/90 hover:text-black hover:rounded-md ${
+                    hide && 'hidden duration-150'
+                  }`
+                }
               >
                 <ArrowRightOnRectangleIcon className="w-7 group-hover:translate-x-0.5 transition duration-300" />
                 <span className={`${!open && 'hidden'}`}>Login</span>

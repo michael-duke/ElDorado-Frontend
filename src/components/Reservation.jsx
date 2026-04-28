@@ -17,7 +17,6 @@ import {
   deleteReservation,
 } from '../redux/Reservations/reservationsSlice';
 import useToken from '../redux/Auth/useToken';
-import { authenticatedUser } from '../redux/Auth/authSlice';
 import Loader from './Loader';
 import ReservationDetail from './ReservationDetail';
 
@@ -27,24 +26,18 @@ const Reservation = () => {
   const message = useSelector(allMessages);
   const reservations = useSelector(carReservations);
   const status = useSelector(allStatus);
-  const currentUser = useSelector(authenticatedUser); // useAuthUser();
   const isTokenSet = useToken();
 
-  const handleRemoveReservation = (reservationId) => {
-    const removeOptions = {
-      userId: currentUser.id,
-      reservationId,
-    };
-
-    dispatch(deleteReservation(removeOptions));
-  };
+  const handleRemoveReservation = (reservationId) =>
+    dispatch(deleteReservation(reservationId));
 
   const checkAuthUser = () => {
-    if (!isTokenSet) navigate('/login');
+    if (!isTokenSet) navigate('/auth/login');
   };
 
   const handleResevationMessage = () => {
-    if (message === 'Car has been successfully booked') dispatch(setMessageEmpty(''));
+    if (message.includes('successfully reserved'))
+      dispatch(setMessageEmpty(''));
   };
 
   useEffect(() => {
@@ -68,9 +61,7 @@ const Reservation = () => {
       {reservations.length === 0 ? (
         <Card className="max-w-sm my-auto h-32">
           <CardBody className="text-center font-bold my-auto text-2xl">
-            {' '}
             No Reservations
-            {' '}
           </CardBody>
         </Card>
       ) : (
@@ -78,13 +69,13 @@ const Reservation = () => {
           ({
             id: reservationId,
             pickup_date: pickupDate,
-            return_date: returnDate,
+            dropoff_date: returnDate,
             car: {
               name: carName,
               model,
               image,
               daily_price: dailyPrice,
-              available,
+              status,
             },
           }) => (
             <Card key={reservationId} className="max-w-sm">
@@ -101,7 +92,7 @@ const Reservation = () => {
                   pickupDate={pickupDate}
                   returnDate={returnDate}
                   model={model}
-                  available={available}
+                  status={status}
                 />
               </CardBody>
               <CardFooter

@@ -10,9 +10,7 @@ import {
   Input,
   Button,
 } from '@material-tailwind/react';
-import {
-  Field, Form, Formik, ErrorMessage,
-} from 'formik';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { signUp, allMessages, allStatus } from '../redux/Auth/authSlice';
 import useToken from '../redux/Auth/useToken';
@@ -85,9 +83,7 @@ const Register = () => {
           onSubmit={handleSignUp}
           validationSchema={SignupSchema}
         >
-          {({
-            errors, touched, dirty, isValid,
-          }) => (
+          {({ errors, touched, dirty, isValid }) => (
             <Form>
               <CardBody className="flex flex-col gap-4">
                 <Field
@@ -141,8 +137,8 @@ const Register = () => {
                   label="Confirm Password"
                   size="lg"
                   error={
-                    Boolean(errors.passwordConfirmation)
-                    && Boolean(touched.passwordConfirmation)
+                    Boolean(errors.passwordConfirmation) &&
+                    Boolean(touched.passwordConfirmation)
                   }
                 />
                 <ErrorMessage
@@ -169,7 +165,7 @@ const Register = () => {
                 >
                   Have have an account?
                   <NavLink
-                    to="/login"
+                    to="/auth/login"
                     className="ml-1 font-bold hover:text-gray-600 text-amber-700"
                   >
                     Sign in

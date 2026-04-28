@@ -12,6 +12,7 @@ import AddCarPage from '../pages/AddCarPage';
 import DeleteCarPage from '../pages/DeleteCarPage';
 import { getAvailableCars } from '../redux/Home/home';
 import ProtectedRoute from '../components/ProtectedRoute';
+import AdminRoute from '../components/AdminRoute';
 import useToken from '../redux/Auth/useToken';
 import { getAuthenticatedUser } from '../redux/Auth/authSlice';
 
@@ -43,11 +44,14 @@ const AppRouter = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/reservation" element={<ReservationPage />} />
-            <Route path="/add_car" element={<AddCarPage />} />
-            <Route path="/delete_car" element={<DeleteCarPage />} />
           </Route>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+
+          <Route element={<AdminRoute />}>
+            <Route path="/admin/add_car" element={<AddCarPage />} />
+            <Route path="/admin/delete_car" element={<DeleteCarPage />} />
+          </Route>
+          <Route path="auth/login" element={<LoginPage />} />
+          <Route path="auth/register" element={<RegisterPage />} />
         </Routes>
       </div>
     </div>

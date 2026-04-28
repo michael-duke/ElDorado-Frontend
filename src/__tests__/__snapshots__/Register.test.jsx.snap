@@ -108,7 +108,7 @@ Object {
               Have have an account?
               <a
                 class="ml-1 font-bold hover:text-gray-600 text-amber-700"
-                href="/login"
+                href="/auth/login"
               >
                 Sign in
               </a>
@@ -223,7 +223,7 @@ Object {
             Have have an account?
             <a
               class="ml-1 font-bold hover:text-gray-600 text-amber-700"
-              href="/login"
+              href="/auth/login"
             >
               Sign in
             </a>

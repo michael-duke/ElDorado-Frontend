@@ -4,7 +4,7 @@ import useToken from '../redux/Auth/useToken';
 
 const ProtectedRoute = () => {
   const isTokenSet = useToken();
-  return isTokenSet ? <Outlet /> : <Navigate to="/login" />;
+  return isTokenSet ? <Outlet /> : <Navigate to="/auth/login" />;
 };
 
 export default ProtectedRoute;

@@ -17,11 +17,11 @@ const Alert = ({ message }) => {
   };
 
   const setAuthStatusIdle = () => {
-    if (pathname === '/login') dispatch(setAuthStatus());
+    if (pathname === '/auth/login') dispatch(setAuthStatus());
   };
 
   const setCarStatusIdle = () => {
-    if (pathname === '/add_car') dispatch(setHomeStatus());
+    if (pathname === '/admin/add_car') dispatch(setHomeStatus());
   };
 
   setTimeout(() => {
