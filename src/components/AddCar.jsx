@@ -12,9 +12,7 @@ import {
 } from '@material-tailwind/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {
-  ErrorMessage, Formik, Form, Field,
-} from 'formik';
+import { ErrorMessage, Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { addCar, allMessages, allStatus } from '../redux/Home/home';
 import useToken from '../redux/Auth/useToken';
@@ -76,11 +74,12 @@ const AddCar = () => {
   };
 
   const checkAuthUser = () => {
-    if (!isTokenSet) navigate('/login');
+    if (!isTokenSet) navigate('/auth/login');
   };
 
   const navigateDeleteCar = () => {
-    if (message === 'Car has been successfully created') navigate('/delete_car');
+    if (message === 'Car has been successfully created')
+      navigate('/delete_car');
   };
 
   useEffect(() => {
@@ -118,9 +117,7 @@ const AddCar = () => {
           onSubmit={handleAddCar}
           validationSchema={CarSchema}
         >
-          {({
-            errors, touched, isValid, dirty, values,
-          }) => (
+          {({ errors, touched, isValid, dirty, values }) => (
             <Form>
               <CardBody className="flex flex-col gap-4">
                 <div>

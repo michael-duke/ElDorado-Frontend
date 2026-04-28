@@ -17,7 +17,7 @@ const Alert = ({ message }) => {
   };
 
   const setAuthStatusIdle = () => {
-    if (pathname === '/login') dispatch(setAuthStatus());
+    if (pathname === '/auth/login') dispatch(setAuthStatus());
   };
 
   const setCarStatusIdle = () => {

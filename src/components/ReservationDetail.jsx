@@ -6,8 +6,8 @@ import {
   AccordionBody,
   Chip,
 } from '@material-tailwind/react';
-import { BookmarkIcon, BookmarkSlashIcon } from '@heroicons/react/24/solid';
-import { TagIcon, NoSymbolIcon } from '@heroicons/react/24/outline';
+import { BookmarkIcon, BookmarkSlashIcon, NoSymbolIcon } from '@heroicons/react/24/solid';
+import { TagIcon } from '@heroicons/react/24/outline';
 import moment from 'moment';
 
 const ReservationDetail = ({
@@ -29,19 +29,19 @@ const ReservationDetail = ({
   };
 
   const formatDate = (date) => moment(date).format('ddd, MMM Do, YYYY');
-  console.log(status)
+  console.log(status);
   return (
     <>
       <Accordion open={open === 1} animate={customAnimation}>
         <AccordionHeader onClick={() => handleOpen(1)}>{title}</AccordionHeader>
-        {/* {status === 'reserved' && (
+        {status === 'retired' && (
           <Chip
             color="red"
             value="car is no longer available"
             icon={<NoSymbolIcon />}
             className="capitalize mt-2"
           />
-        )} */}
+        )}
         <AccordionBody>
           <ul className="list-outside list-disc">
             <li className="flex gap-1 items-center">

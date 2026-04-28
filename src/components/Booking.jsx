@@ -36,7 +36,8 @@ const Booking = () => {
   const navigate = useNavigate();
   const isTokenSet = useToken();
 
-  const handleDateFormat = (date) => moment(dayjs(date).toDate()).format('YYYY-MM-DD');
+  const handleDateFormat = (date) =>
+    moment(dayjs(date).toDate()).format('YYYY-MM-DD');
 
   const handleCarId = (carId) => setCarId(+carId);
 
@@ -55,7 +56,7 @@ const Booking = () => {
   };
 
   const checkAuthUser = () => {
-    if (!isTokenSet) navigate('/login');
+    if (!isTokenSet) navigate('/auth/login');
   };
 
   const handleSelectedCar = () => {
@@ -101,7 +102,9 @@ const Booking = () => {
             size="large"
             format="YYYY/MM/DD"
             allowClear
-            disabledDate={(current) => current && current < moment().startOf('day')}
+            disabledDate={(current) =>
+              current && current < moment().startOf('day')
+            }
             onChange={(date) => setPickupDate(handleDateFormat(date))}
           />
           <DatePicker
@@ -110,7 +113,9 @@ const Booking = () => {
             size="large"
             format="YYYY/MM/DD"
             allowClear
-            disabledDate={(current) => current && current < moment().endOf('day')}
+            disabledDate={(current) =>
+              current && current < moment().endOf('day')
+            }
             onChange={(date) => setReturnDate(handleDateFormat(date))}
           />
           <Select

@@ -28,14 +28,16 @@ const Reservation = () => {
   const status = useSelector(allStatus);
   const isTokenSet = useToken();
 
-  const handleRemoveReservation = (reservationId) => dispatch(deleteReservation(reservationId));
+  const handleRemoveReservation = (reservationId) =>
+    dispatch(deleteReservation(reservationId));
 
   const checkAuthUser = () => {
-    if (!isTokenSet) navigate('/login');
+    if (!isTokenSet) navigate('/auth/login');
   };
 
   const handleResevationMessage = () => {
-    if (message.includes('successfully reserved')) dispatch(setMessageEmpty(''));
+    if (message.includes('successfully reserved'))
+      dispatch(setMessageEmpty(''));
   };
 
   useEffect(() => {

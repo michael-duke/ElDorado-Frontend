@@ -84,7 +84,7 @@ const Login = () => {
           <Typography variant="small" className="mt-6 flex justify-center">
             Don&apos;t have an account?
             <NavLink
-              to="/register"
+              to="/auth/register"
               className="ml-1 font-bold hover:text-gray-600 text-amber-700"
             >
               Sign up

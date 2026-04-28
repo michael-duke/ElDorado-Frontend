@@ -38,7 +38,7 @@ const DeleteCar = () => {
   document.title = 'ElDorado | DeleteCar';
 
   const checkAuthUser = () => {
-    if (!isTokenSet) navigate('/login');
+    if (!isTokenSet) navigate('/auth/login');
   };
 
   useEffect(() => {
@@ -65,21 +65,13 @@ const DeleteCar = () => {
         <Card className="max-w-sm mt-48 mx-auto h-32">
           <CardBody className="text-center font-bold my-auto text-2xl">
             {' '}
-            No Cars Owned
-            {' '}
+            No Cars Owned{' '}
           </CardBody>
         </Card>
       ) : (
         <div className="Car-Grid grid gap-6">
           {cars.map(
-            ({
-              id: carId,
-              name,
-              model,
-              image,
-              daily_price: price,
-              status,
-            }) => (
+            ({ id: carId, name, model, image, daily_price: price, status }) => (
               <Card key={carId} className="cursor-pointer my-5">
                 <CardHeader
                   color="amber"
@@ -101,10 +93,7 @@ const DeleteCar = () => {
                   divider
                   className="flex items-center justify-between py-3"
                 >
-                  <Typography variant="small">
-                    $
-                    {price}
-                  </Typography>
+                  <Typography variant="small">${price}</Typography>
                   <Switch
                     status={status}
                     carName={name}
