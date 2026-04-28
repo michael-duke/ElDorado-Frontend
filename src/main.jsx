@@ -10,7 +10,11 @@ import './index.css';
 const root = createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider>
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+      }}
+    >
       <Provider store={store}>
         <App />
       </Provider>
