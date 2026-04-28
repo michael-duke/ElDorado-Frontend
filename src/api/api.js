@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3001/api/v1';
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const setAuthToken = ({ headers }) => localStorage.setItem('token', headers.get('Authorization'));
 
@@ -17,7 +17,7 @@ const apiClient = async (endpoint, { body, ...customConfig } = {}) => {
   };
 
   try {
-    const response = await fetch(`${baseURL}${endpoint}`, {
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       ...customConfig,
       headers,
       ...(body && { body: JSON.stringify(body) }),
