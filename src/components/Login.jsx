@@ -37,7 +37,6 @@ const Login = () => {
     if (isTokenSet) navigate('/');
   }, [isTokenSet]);
 
-  document.title = 'ElDorado | Login';
   return (
     <>
       {status === 'unauthorized' && <Alert message={message} />}

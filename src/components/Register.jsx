@@ -60,7 +60,6 @@ const Register = () => {
     if (isTokenSet) navigate('/');
   }, [isTokenSet]);
 
-  document.title = 'ElDorado | Register';
   return (
     <>
       {status === 'failed' && <Alert message={message} />}

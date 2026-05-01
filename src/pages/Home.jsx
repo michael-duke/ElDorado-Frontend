@@ -18,7 +18,7 @@ import Loader from '../components/Loader';
 import { availableCars, allStatus } from '../redux/Home/home';
 
 const Home = () => {
-  document.title = 'ElDorado | Home';
+  document.title = 'ElDorado Rentals';
   const cars = useSelector(availableCars);
   const status = useSelector(allStatus);
   const navigate = useNavigate();
